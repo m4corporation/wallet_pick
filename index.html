@@ -793,15 +793,55 @@
   </script>
 
 <script>
-    // Получаем yclid из URL
+    // ==========================================
+    // СОХРАНЯЕМ ДАННЫЕ РЕКЛАМНОГО ПЕРЕХОДА
+    // ==========================================
+
     const urlParams = new URLSearchParams(window.location.search);
+
+    // Получаем параметры из URL
     const yclid = urlParams.get('yclid');
+    const campaignId = urlParams.get('utm_campaign');
+    const adId = urlParams.get('utm_content');
+    const keyword = urlParams.get('utm_term');
+    const region = urlParams.get('region_name');
 
-    console.log('yclid:', yclid);
+    // Сохраняем рекламные параметры,
+    // только если они действительно пришли
+    if (yclid) {
+        localStorage.setItem('yclid', yclid);
+    }
 
-    // Получаем ClientID Метрики
+    if (campaignId) {
+        localStorage.setItem('campaign_id', campaignId);
+    }
+
+    if (adId) {
+        localStorage.setItem('ad_id', adId);
+    }
+
+    if (keyword) {
+        localStorage.setItem('keyword', keyword);
+    }
+
+    if (region) {
+        localStorage.setItem('region_name', region);
+    }
+
+
+    // Получаем ClientID Яндекс Метрики
     ym(112928603, 'getClientID', function(clientID) {
-        console.log('ClientID:', clientID);
+
+        localStorage.setItem('client_id', clientID);
+
+        console.log('=== РЕКЛАМНЫЕ ДАННЫЕ ===');
+        console.log('yclid:', localStorage.getItem('yclid'));
+        console.log('ClientID:', localStorage.getItem('client_id'));
+        console.log('Campaign ID:', localStorage.getItem('campaign_id'));
+        console.log('Ad ID:', localStorage.getItem('ad_id'));
+        console.log('Keyword:', localStorage.getItem('keyword'));
+        console.log('Region:', localStorage.getItem('region_name'));
+
     });
 </script>
     
