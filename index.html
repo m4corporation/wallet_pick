@@ -771,53 +771,66 @@ btn.rel = 'noopener noreferrer';
 btn.addEventListener('click', function(event) {
     event.preventDefault();
 
-    try {
-        const url = new URL(offer.link);
+    const url = new URL(offer.link);
 
-const campaignId = localStorage.getItem('campaign_id');
-const adId = localStorage.getItem('ad_id');
-const keyword = localStorage.getItem('keyword');
-const region = localStorage.getItem('region_name');
-const yclid = localStorage.getItem('yclid');
-const clientId = localStorage.getItem('client_id');
+    // Получаем данные из localStorage
+    const region = localStorage.getItem('region_name');
+    const adId = localStorage.getItem('ad_id');
+    const keyword = localStorage.getItem('keyword');
+    const clientId = localStorage.getItem('client_id');
+    const yclid = localStorage.getItem('yclid');
+    const campaignId = localStorage.getItem('campaign_id');
 
-// Передаём все данные в FCN
-if (campaignId) {
-    url.searchParams.set('sub1', campaignId);
-}
+    // ==========================================
+    // НАША СХЕМА SUBID
+    // ==========================================
 
-if (adId) {
-    url.searchParams.set('sub2', adId);
-}
+    // SUB1 = регион
+    if (region) {
+        url.searchParams.set('sub1', region);
+    }
 
-if (keyword) {
-    url.searchParams.set('sub3', keyword);
-}
+    // SUB2 = ID объявления
+    if (adId) {
+        url.searchParams.set('sub2', adId);
+    }
 
-if (region) {
-    url.searchParams.set('sub4', region);
-}
+    // SUB3 = ключевое слово
+    if (keyword) {
+        url.searchParams.set('sub3', keyword);
+    }
 
-if (yclid) {
-    url.searchParams.set('sub5', yclid);
-}
+    // SUB4 = ClientID Яндекс Метрики
+    if (clientId) {
+        url.searchParams.set('sub4', clientId);
+    }
 
-if (clientId) {
-    url.searchParams.set('sub6', clientId);
-}
+    // SUB5 = YCLID
+    if (yclid) {
+        url.searchParams.set('sub5', yclid);
+    }
 
-        console.log('=== ПЕРЕХОД В FCN ===');
-        console.log('Оффер:', offer.name);
-        console.log('sub1 campaign:', localStorage.getItem('campaign_id'));
-        console.log('sub2 ad:', localStorage.getItem('ad_id'));
-        console.log('sub3 keyword:', localStorage.getItem('keyword'));
-        console.log('sub4 region:', localStorage.getItem('region_name'));
-        console.log('sub5 yclid:', yclid);
-        console.log('sub6 ClientID:', clientId);
-        console.log('FCN URL:', url.toString());
+    // SUB6 = ID кампании
+    if (campaignId) {
+        url.searchParams.set('sub6', campaignId);
+    }
 
-        // Открываем уже готовую ссылку
-        window.open(url.toString(), '_blank');
+    // ==========================================
+    // ПРОВЕРКА
+    // ==========================================
+
+    console.log('=== ПЕРЕХОД В FCN ===');
+    console.log('Оффер:', offer.name);
+    console.log('sub1 region:', region);
+    console.log('sub2 ad:', adId);
+    console.log('sub3 keyword:', keyword);
+    console.log('sub4 ClientID:', clientId);
+    console.log('sub5 yclid:', yclid);
+    console.log('sub6 campaign:', campaignId);
+    console.log('FCN URL:', url.toString());
+
+    // Открываем FCN
+    window.open(url.toString(), '_blank');
 
     } catch (error) {
         console.error('Ошибка формирования FCN-ссылки:', error);
