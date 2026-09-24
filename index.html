@@ -762,12 +762,53 @@
         perksBlock.appendChild(perksList);
 
         // ---------- Кнопка ----------
-        const btn = document.createElement('a');
-        btn.className = 'offer-btn';
-        btn.href = offer.link || '#';
-        btn.target = '_blank';            // ← открывает в новой вкладке
-        btn.rel = 'noopener noreferrer';  // ← защита + рекомендация Google
-        btn.innerHTML = 'Получить как новый клиент <i class="fa-solid fa-arrow-right"></i>';
+const btn = document.createElement('a');
+btn.className = 'offer-btn';
+btn.href = offer.link || '#';
+btn.target = '_blank';
+btn.rel = 'noopener noreferrer';
+
+btn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    try {
+        const url = new URL(offer.link);
+
+        // Получаем данные текущего посетителя
+        const yclid = localStorage.getItem('yclid');
+        const clientId = localStorage.getItem('client_id');
+
+        // Передаём данные в FCN
+        if (yclid) {
+            url.searchParams.set('sub5', yclid);
+        }
+
+        if (clientId) {
+            url.searchParams.set('sub6', clientId);
+        }
+
+        console.log('=== ПЕРЕХОД В FCN ===');
+        console.log('Оффер:', offer.name);
+        console.log('sub1 campaign:', localStorage.getItem('campaign_id'));
+        console.log('sub2 ad:', localStorage.getItem('ad_id'));
+        console.log('sub3 keyword:', localStorage.getItem('keyword'));
+        console.log('sub4 region:', localStorage.getItem('region_name'));
+        console.log('sub5 yclid:', yclid);
+        console.log('sub6 ClientID:', clientId);
+        console.log('FCN URL:', url.toString());
+
+        // Открываем уже готовую ссылку
+        window.open(url.toString(), '_blank');
+
+    } catch (error) {
+        console.error('Ошибка формирования FCN-ссылки:', error);
+
+        // Если что-то пошло не так — обычный переход
+        window.open(offer.link, '_blank');
+    }
+});
+
+btn.innerHTML = 'Получить как новый клиент <i class="fa-solid fa-arrow-right"></i>';
 
         // ---------- Подпись под кнопкой ----------
         const btnNote = document.createElement('div');
