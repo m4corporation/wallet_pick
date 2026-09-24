@@ -774,18 +774,37 @@ btn.addEventListener('click', function(event) {
     try {
         const url = new URL(offer.link);
 
-        // Получаем данные текущего посетителя
-        const yclid = localStorage.getItem('yclid');
-        const clientId = localStorage.getItem('client_id');
+const campaignId = localStorage.getItem('campaign_id');
+const adId = localStorage.getItem('ad_id');
+const keyword = localStorage.getItem('keyword');
+const region = localStorage.getItem('region_name');
+const yclid = localStorage.getItem('yclid');
+const clientId = localStorage.getItem('client_id');
 
-        // Передаём данные в FCN
-        if (yclid) {
-            url.searchParams.set('sub5', yclid);
-        }
+// Передаём все данные в FCN
+if (campaignId) {
+    url.searchParams.set('sub1', campaignId);
+}
 
-        if (clientId) {
-            url.searchParams.set('sub6', clientId);
-        }
+if (adId) {
+    url.searchParams.set('sub2', adId);
+}
+
+if (keyword) {
+    url.searchParams.set('sub3', keyword);
+}
+
+if (region) {
+    url.searchParams.set('sub4', region);
+}
+
+if (yclid) {
+    url.searchParams.set('sub5', yclid);
+}
+
+if (clientId) {
+    url.searchParams.set('sub6', clientId);
+}
 
         console.log('=== ПЕРЕХОД В FCN ===');
         console.log('Оффер:', offer.name);
