@@ -771,66 +771,67 @@ btn.rel = 'noopener noreferrer';
 btn.addEventListener('click', function(event) {
     event.preventDefault();
 
-    const url = new URL(offer.link);
+    try {
+        const url = new URL(offer.link);
 
-    // Получаем данные из localStorage
-    const region = localStorage.getItem('region_name');
-    const adId = localStorage.getItem('ad_id');
-    const keyword = localStorage.getItem('keyword');
-    const clientId = localStorage.getItem('client_id');
-    const yclid = localStorage.getItem('yclid');
-    const campaignId = localStorage.getItem('campaign_id');
+        // Получаем данные из localStorage
+        const region = localStorage.getItem('region_name');
+        const adId = localStorage.getItem('ad_id');
+        const keyword = localStorage.getItem('keyword');
+        const clientId = localStorage.getItem('client_id');
+        const yclid = localStorage.getItem('yclid');
+        const campaignId = localStorage.getItem('campaign_id');
 
-    // ==========================================
-    // НАША СХЕМА SUBID
-    // ==========================================
+        // ==========================================
+        // НАША СХЕМА SUBID
+        // ==========================================
 
-    // SUB1 = регион
-    if (region) {
-        url.searchParams.set('sub1', region);
-    }
+        // SUB1 = регион
+        if (region) {
+            url.searchParams.set('sub1', region);
+        }
 
-    // SUB2 = ID объявления
-    if (adId) {
-        url.searchParams.set('sub2', adId);
-    }
+        // SUB2 = ID объявления
+        if (adId) {
+            url.searchParams.set('sub2', adId);
+        }
 
-    // SUB3 = ключевое слово
-    if (keyword) {
-        url.searchParams.set('sub3', keyword);
-    }
+        // SUB3 = ключевое слово
+        if (keyword) {
+            url.searchParams.set('sub3', keyword);
+        }
 
-    // SUB4 = ClientID Яндекс Метрики
-    if (clientId) {
-        url.searchParams.set('sub4', clientId);
-    }
+        // SUB4 = ClientID Яндекс Метрики
+        if (clientId) {
+            url.searchParams.set('sub4', clientId);
+        }
 
-    // SUB5 = YCLID
-    if (yclid) {
-        url.searchParams.set('sub5', yclid);
-    }
+        // SUB5 = YCLID
+        if (yclid) {
+            url.searchParams.set('sub5', yclid);
+        }
 
-    // SUB6 = ID кампании
-    if (campaignId) {
-        url.searchParams.set('sub6', campaignId);
-    }
+        // SUB6 = ID кампании
+        if (campaignId) {
+            url.searchParams.set('sub6', campaignId);
+        }
 
-    // ==========================================
-    // ПРОВЕРКА
-    // ==========================================
+        // ==========================================
+        // ПРОВЕРКА
+        // ==========================================
 
-    console.log('=== ПЕРЕХОД В FCN ===');
-    console.log('Оффер:', offer.name);
-    console.log('sub1 region:', region);
-    console.log('sub2 ad:', adId);
-    console.log('sub3 keyword:', keyword);
-    console.log('sub4 ClientID:', clientId);
-    console.log('sub5 yclid:', yclid);
-    console.log('sub6 campaign:', campaignId);
-    console.log('FCN URL:', url.toString());
+        console.log('=== ПЕРЕХОД В FCN ===');
+        console.log('Оффер:', offer.name);
+        console.log('sub1 region:', region);
+        console.log('sub2 ad:', adId);
+        console.log('sub3 keyword:', keyword);
+        console.log('sub4 yandex ClientID:', clientId);
+        console.log('sub5 yclid:', yclid);
+        console.log('sub6 campaign:', campaignId);
+        console.log('FCN URL:', url.toString());
 
-    // Открываем FCN
-    window.open(url.toString(), '_blank');
+        // Открываем FCN
+        window.open(url.toString(), '_blank');
 
     } catch (error) {
         console.error('Ошибка формирования FCN-ссылки:', error);
