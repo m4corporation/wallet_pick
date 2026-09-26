@@ -22,6 +22,7 @@
 <!-- /Yandex.Metrika counter -->
     
   <title>Первый займ под 0% — только для новых клиентов</title>
+  <meta name="description" content="Подборка предложений МФО с 0% на первый займ для новых клиентов: суммы, сроки и условия каждой компании в одном месте.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -184,13 +185,33 @@
       background-clip: text;
     }
 
-    .showcase-header p {
-      font-size: 1.1rem;
-      color: #5c6f8c;
-      font-weight: 400;
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.5;
+    .showcase-header .header-lead {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #3d4f6b;
+      max-width: 600px;
+      margin: 0 auto 1.3rem;
+      line-height: 1.6;
+    }
+
+    .header-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #fff8e6;
+      border: 1px solid #ffe4a3;
+      color: #8a6a1a;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+
+    .header-note i {
+      color: #e6a700;
+      flex-shrink: 0;
     }
 
     /* ---------- ПРЕДУПРЕЖДЕНИЕ ДЛЯ ПОВТОРНИКОВ ---------- */
@@ -408,7 +429,136 @@
       text-align: center;
       line-height: 1.3;
     }
+      /* ---------- РЕКЛАМНЫЙ ДИСКЛЕЙМЕР ---------- */
+.ad-disclaimer {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(180, 200, 225, 0.6);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #8a9bb5;
+  text-align: left;
+}
 
+.ad-disclaimer .ad-label {
+  font-weight: 700;
+  color: #5c6f8c;
+  
+  letter-spacing: 0.03em;
+}
+
+/* ---------- ЗНАЧОК ДОВЕРИЯ ---------- */
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #4b9b6e;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.trust-badge i {
+  font-size: 0.8rem;
+}
+
+/* ---------- ПРИМЕЧАНИЕ "ТОЛЬКО ДЛЯ НОВЫХ" ПОД КНОПКОЙ ---------- */
+.new-client-note {
+  font-size: 0.76rem;
+  color: #7a5a00;
+  background: #fff8e6;
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  margin-top: 0.7rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ---------- СКЕЛЕТОН ЗАГРУЗКИ ---------- */
+.skeleton-card {
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid rgba(210, 225, 240, 0.6);
+  padding: 1.8rem 1.6rem;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.skeleton-block {
+  border-radius: 12px;
+  background: linear-gradient(90deg, #eef1f6 25%, #e4e9f2 37%, #eef1f6 63%);
+  background-size: 400% 100%;
+  animation: skeletonShine 1.4s ease infinite;
+}
+
+@keyframes skeletonShine {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+/* ---------- FAQ ---------- */
+.faq-section {
+  max-width: 780px;
+  margin: 3rem auto 0;
+  width: 100%;
+}
+
+.faq-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d1e3a;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(210, 225, 240, 0.6);
+  border-radius: 18px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0d1e3a;
+}
+
+.faq-question i {
+  color: #8a9bb5;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  font-size: 0.9rem;
+  color: #5c6f8c;
+  line-height: 1.55;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer-inner {
+  padding: 0 1.3rem 1.1rem;
+}
     .btn-note i {
       color: #b8c6da;
       font-size: 0.8rem;
@@ -575,8 +725,12 @@
       <div class="badge-new">
         Только для новых клиентов
       </div>
-      <h1>Первый займ <span class="highlight">под 0%</span></h1>
-      <p> <br/>Мы подобрали лучшие микрозаймы для новых клиентов. Выберите новое предложение ниже для себя и получите выгодные условия.<br/> <br/>Исключительно для новых клиентов. <br/><strong>На повторные заявки предложения не распространяются.</strong></p>
+      <h1>Первый займ <span class="highlight">под 0%</span></h1> <br/>
+      <p class="header-lead">Мы подобрали выгодные предложения по первому займу для новых клиентов — выберите вариант и оформите его на сайте партнёра за несколько минут.</p>
+      <div class="header-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Условия действуют при первом обращении в выбранную компанию — на повторные заявки не распространяются.
+      </div>
     </div>
 
     <!-- ПРЕДУПРЕЖДЕНИЕ ДЛЯ ПОВТОРНИКОВ -->
@@ -588,8 +742,32 @@
     </div>-->
 
     <!-- СЕТКА ОФФЕРОВ -->
-    <div class="offers-grid" id="offersGrid"></div>
+    <div class="offers-grid" id="offersGrid">
+      <div class="skeleton-card"><div class="skeleton-block" style="height:120px;"></div><div class="skeleton-block" style="height:24px;width:60%;"></div><div class="skeleton-block" style="height:14px;width:90%;"></div><div class="skeleton-block" style="height:14px;width:80%;"></div><div class="skeleton-block" style="height:48px;margin-top:auto;"></div></div>
+      <div class="skeleton-card"><div class="skeleton-block" style="height:120px;"></div><div class="skeleton-block" style="height:24px;width:60%;"></div><div class="skeleton-block" style="height:14px;width:90%;"></div><div class="skeleton-block" style="height:14px;width:80%;"></div><div class="skeleton-block" style="height:48px;margin-top:auto;"></div></div>
+      <div class="skeleton-card"><div class="skeleton-block" style="height:120px;"></div><div class="skeleton-block" style="height:24px;width:60%;"></div><div class="skeleton-block" style="height:14px;width:90%;"></div><div class="skeleton-block" style="height:14px;width:80%;"></div><div class="skeleton-block" style="height:48px;margin-top:auto;"></div></div>
+    </div>
       
+      <div class="faq-section" id="faqSection">
+        <h2>Частые вопросы</h2>
+        <div class="faq-item">
+          <div class="faq-question">Что нужно для оформления займа? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Обычно достаточно паспорта гражданина РФ и номера телефона. Точный список документов и требования к заёмщику зависят от конкретной МФО — они указаны на её официальном сайте при переходе с карточки оффера.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Как быстро приходят деньги? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">При одобрении заявки большинство МФО переводят средства на карту или счёт в течение нескольких минут — точные сроки зависят от выбранной компании и способа получения.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Почему предложения только для новых клиентов? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Указанные на карточках условия — это акции конкретных МФО специально для тех, кто ещё не оформлял у них займ. Если вы уже пользовались услугами конкретной компании, для повторной заявки будут действовать её стандартные тарифы — уточняйте актуальные условия у самой МФО.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Проверяют ли кредитную историю? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Да, большинство МФО проверяют данные в бюро кредитных историй перед принятием решения. Решение об одобрении и итоговые условия займа принимает выбранная вами кредитная организация, а не этот сайт.</div></div>
+        </div>
+      </div>
+
       <div class="tg-helper">
   <div class="tg-helper-icon">
     <i class="fa-brands fa-telegram"></i>
@@ -611,6 +789,7 @@
           <p>Данные предложения не является публичной офертой. Условия выдачи заёма/кредита могут отличаться. Полные условия выдачи заёма/кредита и требования к заёмщику размещены на сайте выбранной кредитной организации.</p>
           <p>Выдача займов/кредитов у партнеров осуществляется в российских рублях, на банковский счет, наличными или на карту, гражданам Российской Федерации. Данный сайт не относится к финансовым учреждениям, не является кредитором или банком и не несет ответственности за заключенные впоследствии клиентами и партерами договоры кредитования. Доступные суммы займов: от 1 000 рублей до 500 000 рублей. Срок займа: от 62 дней, при процентной ставке: от 1% до 365% годовых. (условия могут отличаться — уточняйте на сайте выбранной кредитной организации).</p>
         </div>
+          <p><a href="privacy.html" style="color:#5b7cfa;">Политика обработки персональных данных</a></p>
         <p class="copyright">© 2026 WalletPick. Все права защищены.</p>
       </div>
     </footer>
@@ -630,8 +809,9 @@
             'от 3 000 ₽ до 30 000 ₽',
             'на 30 дней без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/918/288x120.svg',
-          link: 'https://t.fincpanetwork.ru/click/64288/918?erid=2W5zFK43c2V&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/belka.svg',
+          link: 'https://t.fincpanetwork.ru/click/64288/918?erid=2W5zFK43c2V',
+          psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         },
         {
           name: 'Webbankir',
@@ -643,8 +823,9 @@
             'от 3 000 ₽ до 30 000 ₽',
             'на 21 день без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/77/288x120.svg',
-          link: 'https://t.fincpanetwork.ru/click/64288/77?erid=LjN8JwPDS&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/webbankir.svg',
+          link: 'https://t.fincpanetwork.ru/click/64288/77?erid=LjN8JwPDS',
+            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         },
         {
           name: 'Турбозайм',
@@ -656,8 +837,9 @@
             'от 3 000 ₽ до 15 000 ₽',
             'на 7 дней без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/14/288x120.svg',
-          link: 'https://t.fincpanetwork.ru/click/64288/14?erid=2W5zFHvzYLZ&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/turbozaim.svg',
+          link: 'https://t.fincpanetwork.ru/click/64288/14?erid=2W5zFHvzYLZ',
+            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         },
         {
           name: 'Быстроденьги',
@@ -669,8 +851,9 @@
             'от 3 000 ₽ до 30 000 ₽',
             'на 10 дней без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/613/288x120.png',
-          link: 'https://t.fincpanetwork.ru/click/64288/613?erid=LjN8JtHPe&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/bistrodengi.png',
+          link: 'https://t.fincpanetwork.ru/click/64288/613?erid=LjN8JtHPe',
+            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         },
         {
           name: 'Moneyman',
@@ -682,8 +865,9 @@
             'от 1 000 ₽ до 15 000 ₽',
             'на 7 дней без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/101/288x120.svg',
-          link: 'https://t.fincpanetwork.ru/click/64288/101?erid=2W5zFGacKGm&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/moneyman.svg',
+          link: 'https://t.fincpanetwork.ru/click/64288/101?erid=2W5zFGacKGm',
+            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         },
         {
           name: 'Срочноденьги',
@@ -695,8 +879,9 @@
             'от 2 000 ₽ до 30 000 ₽',
             'на 7 дней без процентов'
           ],
-          img: 'https://s3.twcstorage.ru/fcn-bucket/offers/38/288x120.svg',
-          link: 'https://t.fincpanetwork.ru/click/64288/38?erid=LjN8Kaxif&sub1={region_name}&sub2={ad_id}&sub3={keyword}&sub4={client_id}&sub5={yclid}&sub6={campaign_id}',
+          img: 'materials/srochnodengi.svg',
+          link: 'https://t.fincpanetwork.ru/click/64288/38?erid=LjN8Kaxif',
+            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
         }
       ];
 
@@ -727,6 +912,11 @@
         zeroBadge.className = 'zero-badge';
         zeroBadge.textContent = 'ДЛЯ НОВЫХ КЛИЕНТОВ';
         imageDiv.appendChild(zeroBadge);
+
+        // ---------- Значок доверия ----------
+        const trustBadge = document.createElement('div');
+        trustBadge.className = 'trust-badge';
+        trustBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Организация в реестре МФО Банка России';
 
         // ---------- Название ----------
         const nameEl = document.createElement('div');
@@ -772,6 +962,11 @@ btn.addEventListener('click', function(event) {
     event.preventDefault();
 
     try {
+        // Цель в Яндекс.Метрике — клик по конкретному офферу
+        if (typeof ym === 'function') {
+            ym(112928603, 'reachGoal', 'offer_click', { offer: offer.name });
+        }
+
         const url = new URL(offer.link);
 
         // Получаем данные из localStorage
@@ -849,15 +1044,31 @@ btn.innerHTML = 'Получить как новый клиент <i class="fa-so
         const btnNote = document.createElement('div');
         btnNote.className = 'btn-note';
         btnNote.innerHTML = 'Переход к оформлению заявки';
+          
+          // ---------- Рекламный дисклеймер ----------
+const disclaimer = document.createElement('div');
+disclaimer.className = 'ad-disclaimer';
+disclaimer.innerHTML =
+  '<span class="ad-label">Реклама.</span> Изучите все условия кредита (займа). ' +
+  'Оценивайте свои финансовые возможности и риски. ' +
+  'Полная стоимость кредита (займа) до ' + (offer.psk || '—') + '%';
+
+        // ---------- Примечание "только для новых клиентов" ----------
+        const newClientNote = document.createElement('div');
+    //    newClientNote.className = 'new-client-note';
+      //  newClientNote.innerHTML = 'Ранее не оформляли займ в «' + offer.name + '»? Предложение действует именно для вас.';
 
         // ---------- Сборка карточки ----------
         card.appendChild(imageDiv);
+        card.appendChild(trustBadge);
         card.appendChild(nameEl);
         card.appendChild(subtitleEl);
         card.appendChild(descEl);
         card.appendChild(perksBlock);
         card.appendChild(btn);
         card.appendChild(btnNote);
+        card.appendChild(newClientNote);
+        card.appendChild(disclaimer);
 
         return card;
       }
@@ -920,6 +1131,36 @@ btn.innerHTML = 'Получить как новый клиент <i class="fa-so
 
     });
 </script>
-    
+    <div id="cookieBanner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#0d1e3a; color:#fff; padding:1rem 1.5rem; z-index:9999; font-size:0.85rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:1rem;">
+  <span style="max-width:600px;">
+    Мы используем cookie и похожие технологии для аналитики и учёта рекламных переходов.
+    Подробнее — в <a href="privacy.html" style="color:#7d9aff;">политике конфиденциальности</a>.
+  </span>
+  <button id="cookieAcceptBtn" style="background:#5b7cfa; color:#fff; border:none; padding:0.6rem 1.3rem; border-radius:40px; font-weight:700; cursor:pointer;">Понятно</button>
+</div>
+
+<script>
+  // ---------- FAQ: раскрытие/сворачивание вопросов ----------
+  document.querySelectorAll('#faqSection .faq-question').forEach(function(q) {
+    q.addEventListener('click', function() {
+      q.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+
+<script>
+  (function() {
+    const KEY = 'cookie_consent_v1';
+    const banner = document.getElementById('cookieBanner');
+    const btn = document.getElementById('cookieAcceptBtn');
+    if (!localStorage.getItem(KEY)) {
+      banner.style.display = 'flex';
+    }
+    btn.addEventListener('click', function() {
+      localStorage.setItem(KEY, 'accepted');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
 </body>
 </html>
