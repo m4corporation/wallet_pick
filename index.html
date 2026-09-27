@@ -448,18 +448,31 @@
 }
 
 /* ---------- ЗНАЧОК ДОВЕРИЯ ---------- */
-.trust-badge {
+/* ---------- ВЕРОЯТНОСТЬ ОДОБРЕНИЯ ---------- */
+.approval-badge {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.72rem;
-  color: #4b9b6e;
+  font-size: 0.78rem;
   font-weight: 600;
   margin-bottom: 0.9rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 10px;
+  width: fit-content;
 }
 
-.trust-badge i {
-  font-size: 0.8rem;
+.approval-badge.high {
+  color: #0f8a5f;
+  background: #e7f8f0;
+}
+
+.approval-badge.medium {
+  color: #b3790f;
+  background: #fff6e5;
+}
+
+.approval-badge i {
+  font-size: 0.85rem;
 }
 
 /* ---------- ПРИМЕЧАНИЕ "ТОЛЬКО ДЛЯ НОВЫХ" ПОД КНОПКОЙ ---------- */
@@ -788,6 +801,7 @@
         <div class="disclaimer">
           <p>Данные предложения не является публичной офертой. Условия выдачи заёма/кредита могут отличаться. Полные условия выдачи заёма/кредита и требования к заёмщику размещены на сайте выбранной кредитной организации.</p>
           <p>Выдача займов/кредитов у партнеров осуществляется в российских рублях, на банковский счет, наличными или на карту, гражданам Российской Федерации. Данный сайт не относится к финансовым учреждениям, не является кредитором или банком и не несет ответственности за заключенные впоследствии клиентами и партерами договоры кредитования. Доступные суммы займов: от 1 000 рублей до 500 000 рублей. Срок займа: от 62 дней, при процентной ставке: от 1% до 365% годовых. (условия могут отличаться — уточняйте на сайте выбранной кредитной организации).</p>
+          <p>Сервис WalletPick бесплатно предоставляет информацию о займах. Процентные ставки и срок погашения займа могут отличаться, т. к. зависят от выбранной вами микрофинансовой организации (МФО). Окончательные условия займа определяются договором. WalletPick не осуществляет микрофинансовую деятельность и не гарантирует наличие предложений. Одобрение займа — от МФО, предложенных пользователю после заполнения анкеты, при уcловии соответствия всем требованиям и успешной проверки данных. Займ без процентов предоставляют Быстроденьги, BelkaCredit, Webbankir, Срочноденьги, Moneyman, Турбозайм — для новых клиентов микрофинансовой организации. Все предложения, отображенные на данной странице, являются лучшими или выгодными исключительно по мнению сервиса WalletPick.</p>
         </div>
           <p><a href="privacy.html" style="color:#5b7cfa;">Политика обработки персональных данных</a></p>
         <p class="copyright">© 2026 WalletPick. Все права защищены.</p>
@@ -811,7 +825,8 @@
           ],
           img: 'materials/belka.svg',
           link: 'https://t.fincpanetwork.ru/click/64288/918?erid=2W5zFK43c2V',
-          psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+          psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 70
         },
         {
           name: 'Webbankir',
@@ -825,7 +840,8 @@
           ],
           img: 'materials/webbankir.svg',
           link: 'https://t.fincpanetwork.ru/click/64288/77?erid=LjN8JwPDS',
-            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+            psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 60.78
         },
         {
           name: 'Турбозайм',
@@ -839,7 +855,8 @@
           ],
           img: 'materials/turbozaim.svg',
           link: 'https://t.fincpanetwork.ru/click/64288/14?erid=2W5zFHvzYLZ',
-            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+            psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 57.2
         },
         {
           name: 'Быстроденьги',
@@ -853,7 +870,8 @@
           ],
           img: 'materials/bistrodengi.png',
           link: 'https://t.fincpanetwork.ru/click/64288/613?erid=LjN8JtHPe',
-            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+            psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 60
         },
         {
           name: 'Moneyman',
@@ -867,7 +885,8 @@
           ],
           img: 'materials/moneyman.svg',
           link: 'https://t.fincpanetwork.ru/click/64288/101?erid=2W5zFGacKGm',
-            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+            psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 60 
         },
         {
           name: 'Срочноденьги',
@@ -881,7 +900,8 @@
           ],
           img: 'materials/srochnodengi.svg',
           link: 'https://t.fincpanetwork.ru/click/64288/38?erid=LjN8Kaxif',
-            psk: '292,000' // ← сюда фактическое значение ПСК этого МФО в % годовых
+            psk: '292,000', // ← сюда фактическое значение ПСК этого МФО в % годовых
+          approvalRate: 68.63
         }
       ];
 
@@ -913,10 +933,16 @@
         zeroBadge.textContent = 'ДЛЯ НОВЫХ КЛИЕНТОВ';
         imageDiv.appendChild(zeroBadge);
 
-        // ---------- Значок доверия ----------
-        const trustBadge = document.createElement('div');
-        trustBadge.className = 'trust-badge';
-        trustBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Организация в реестре МФО Банка России';
+        // ---------- Вероятность одобрения (на основе реальной статистики) ----------
+        let approvalBadge = null;
+        if (typeof offer.approvalRate === 'number') {
+          approvalBadge = document.createElement('div');
+          const isHigh = offer.approvalRate >= 55;
+          approvalBadge.className = 'approval-badge ' + (isHigh ? 'high' : 'medium');
+          approvalBadge.innerHTML =
+            '<i class="fa-solid fa-chart-line"></i> Вероятность одобрения: ' +
+            (isHigh ? 'высокая' : 'средняя');
+        }
 
         // ---------- Название ----------
         const nameEl = document.createElement('div');
@@ -928,10 +954,14 @@
         subtitleEl.className = 'offer-subtitle';
         subtitleEl.textContent = offer.subtitle;
 
-        // ---------- Описание ----------
-        const descEl = document.createElement('div');
+        // ---------- Описание (первой строкой — ПСК, обязательно до упоминания ставки, ФАС от 20.11.2023) ----------
+        const descEl = document.createElement('p');
         descEl.className = 'offer-desc';
-        descEl.textContent = offer.description;
+        const pskLine = document.createElement('p');
+        pskLine.textContent = 'ПСК: до ' + (offer.psk || '—') + '%';
+        descEl.appendChild(pskLine);
+       // descEl.appendChild(document.createElement('br'));
+        descEl.appendChild(document.createTextNode(offer.description));
 
         // ---------- Блок perks: заголовок + список ----------
         const perksBlock = document.createElement('div');
@@ -1050,8 +1080,7 @@ const disclaimer = document.createElement('div');
 disclaimer.className = 'ad-disclaimer';
 disclaimer.innerHTML =
   '<span class="ad-label">Реклама.</span> Изучите все условия кредита (займа). ' +
-  'Оценивайте свои финансовые возможности и риски. ' +
-  'Полная стоимость кредита (займа) до ' + (offer.psk || '—') + '%';
+  'Оценивайте свои финансовые возможности и риски.';
 
         // ---------- Примечание "только для новых клиентов" ----------
         const newClientNote = document.createElement('div');
@@ -1060,9 +1089,9 @@ disclaimer.innerHTML =
 
         // ---------- Сборка карточки ----------
         card.appendChild(imageDiv);
-        card.appendChild(trustBadge);
+        if (approvalBadge) card.appendChild(approvalBadge);
         card.appendChild(nameEl);
-        card.appendChild(subtitleEl);
+        if (offer.subtitle) card.appendChild(subtitleEl);
         card.appendChild(descEl);
         card.appendChild(perksBlock);
         card.appendChild(btn);
