@@ -265,6 +265,36 @@
             filter: brightness(1.08);
         }
 
+        /* Бургер — по умолчанию скрыт, виден только на мобильных */
+.site-burger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #0d1e3a;
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    z-index: 1001;
+}
+
+.site-burger:hover {
+    background: #eef2ff;
+    color: var(--primary-dark);
+}
+
+.site-burger:active {
+    transform: scale(0.95);
+}
+
+.site-burger i {
+    transition: transform 0.2s;
+}
+
         /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
 .breadcrumbs {
     max-width: 1200px;
@@ -1310,6 +1340,8 @@
             .showcase-header h1 {
                 font-size: clamp(2.1rem, 9vw, 2.8rem);
                 letter-spacing: -0.02em;
+
+                
             }
 
             .showcase-header p { font-size: 1rem; }
@@ -1414,10 +1446,66 @@
             }
 
             .site-header-inner { padding: 0.7rem 1rem; }
-            .site-logo-text { font-size: 1rem; }
-            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
-            .site-nav { gap: 2px; }
-            .site-nav-link { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
+.site-logo-text { font-size: 1rem; }
+.site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+
+/* Показываем бургер */
+.site-burger {
+    display: inline-flex;
+}
+
+/* Навигация становится выпадающим меню */
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+    box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 0.6rem 0.9rem 1rem;
+    z-index: 999;
+    animation: slideDown 0.2s ease;
+}
+
+.site-nav.open {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.site-nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 12px;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+}
+
+.site-nav-link i {
+    font-size: 0.9rem;
+    color: #8a9bb5;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.site-nav-link:hover i,
+.site-nav-link.active i {
+    color: var(--primary-dark);
+}
+
+.site-nav-link.site-nav-tg i {
+    color: #fff;
+}
             
 
             .breadcrumbs { font-size: 0.74rem; margin: 1rem auto 1rem; }
@@ -1426,16 +1514,7 @@
             .psk-helper { display: none; }
         }
 
-        @media (max-width: 640px) {
-    .site-nav-link {
-        padding: 0;
-        width: 38px;
-        height: 38px;
-        justify-content: center;
-        border-radius: 50%;
-        background: #f4f7fc;
-        color: #4b5e7a;
-    }
+        
 
     /* Скрываем текст, оставляем иконку */
     .site-nav-link .nav-label {
@@ -1479,23 +1558,38 @@
 
     <!-- ХЕДЕР -->
     <header class="site-header" id="siteHeader">
-        <div class="site-header-inner">
-            <a href="/" class="site-logo">
-                <span class="site-logo-mark">W</span>
-                <span class="site-logo-text">WalletPick</span>
-            </a>
+    <div class="site-header-inner">
+        <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
+            <span class="site-logo-mark">W</span>
+            <span class="site-logo-text">WalletPick</span>
+        </a>
 
-            <nav class="site-nav" aria-label="Основная навигация">
-                <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link active">Главная</a>
-                <a href="blog/index.html" class="site-nav-link">Блог</a>
-                <a href="#faqSection" class="site-nav-link">Вопросы</a>
-                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
-                    <i class="fa-brands fa-telegram"></i>
-                    Telegram
-                </a>
-            </nav>
-        </div>
-    </header>
+        <!-- Бургер (виден только на мобильных) -->
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Навигация -->
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+            <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link active">
+                <i class="fa-solid fa-house"></i>
+                Главная
+            </a>
+            <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link">
+                <i class="fa-solid fa-book"></i>
+                Блог
+            </a>
+            <a href="#faqSection" class="site-nav-link">
+                <i class="fa-solid fa-circle-question"></i>
+                Вопросы
+            </a>
+            <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+                <i class="fa-brands fa-telegram"></i>
+                Telegram
+            </a>
+        </nav>
+    </div>
+</header>
 
     <div class="showcase">
 
@@ -2389,6 +2483,56 @@
         }
     })();
     </script>
+    <script>
+(function() {
+    const burger = document.getElementById('siteBurger');
+    const nav = document.getElementById('siteNav');
+    if (!burger || !nav) return;
+
+    function closeMenu() {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    function openMenu() {
+        nav.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+        burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+
+    burger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (nav.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Закрываем меню при клике по ссылке
+    nav.querySelectorAll('.site-nav-link').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Закрываем меню при клике вне его
+    document.addEventListener('click', function(e) {
+        if (nav.classList.contains('open') &&
+            !nav.contains(e.target) &&
+            !burger.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Закрываем при клике по якорю (для #faqSection)
+    window.addEventListener('hashchange', closeMenu);
+
+    // Если ширина окна становится больше 640 — закрываем меню
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 640) closeMenu();
+    });
+})();
+</script>
 
 </body>
 </html>
