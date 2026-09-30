@@ -80,14 +80,7 @@
     flex: 1 0 auto;   /* ← добавить */
 }
 
-/* Футер прижимается к низу */
-.footer {
-    max-width: 1200px;
-    width: 100%;
-    margin-top: auto;   /* ← добавить — толкает футер вниз */
-    padding: 2rem 1.5rem 2.5rem;
-    ...
-}
+
 
         /* ХЕДЕР (такой же, как на главной) */
         .site-header {
@@ -349,7 +342,7 @@
 
         /* ФУТЕР */
         .footer {
-            max-width: 1200px; width: 100%; margin-top: 4rem;
+            max-width: 1200px; width: 100%; margin-top: auto;
             padding: 2rem 1.5rem 2.5rem;
             border-top: 1px solid rgba(180, 200, 225, 0.5);
             background: #ffffff; border-radius: 32px 32px 0 0;
@@ -433,13 +426,7 @@
 .site-nav-link.site-nav-tg i {
     color: #fff;
 }
-            .site-nav-link:not(.site-nav-tg) { display: none; }
-            @media (max-width: 640px) {
-    /* вместо .site-nav-link:not(.site-nav-tg) { display: none; } */
-    .site-nav-link:not(.site-nav-tg):not([href*="/blog"]) {
-        display: none;
-    }
-}
+         
             .breadcrumbs { font-size: 0.74rem; }
             .blog-hero h1 { font-size: 1.7rem; }
             .blog-hero p { font-size: 0.95rem; }
