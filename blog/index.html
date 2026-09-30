@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../wallet.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../wallet.png">
+    <link rel="apple-touch-icon" href="../wallet.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Блог WalletPick — статьи о микрозаймах и финансах</title>
+    <meta name="description" content="Полезные статьи о микрозаймах, кредитной истории, ПСК и финансовой грамотности. Помогаем разобраться, как выбрать МФО и не попасть в долговую яму.">
+    <link rel="canonical" href="https://ваш-домен.ru/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WalletPick">
+    <meta property="og:title" content="Блог WalletPick — статьи о микрозаймах и финансах">
+    <meta property="og:description" content="Полезные статьи о микрозаймах, кредитной истории, ПСК и финансовой грамотности.">
+    <meta property="og:url" content="https://ваш-домен.ru/blog/">
+    <meta property="og:image" content="https://ваш-домен.ru/og-image.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": "https://ваш-домен.ru/blog/#blog",
+          "name": "Блог WalletPick",
+          "description": "Полезные статьи о микрозаймах, кредитной истории и финансовой грамотности",
+          "url": "https://ваш-домен.ru/blog/",
+          "inLanguage": "ru-RU",
+          "publisher": {
+            "@type": "Organization",
+            "name": "WalletPick",
+            "logo": { "@type": "ImageObject", "url": "https://ваш-домен.ru/wallet.png" }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ваш-домен.ru/blog/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ваш-домен.ru/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #5b7cfa;
+            --primary-dark: #3d5ce0;
+            --primary-light: #7d9aff;
+            --primary-soft: #eef2ff;
+            --primary-text: #2c3e6b;
+            --accent: #00c2a8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafbfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 1.5rem;
+}
+
+/* Растягиваем главный контейнер на всю высоту */
+.showcase {
+    max-width: 1200px;
+    width: 100%;
+    flex: 1 0 auto;   /* ← добавить */
+}
+
+/* Футер прижимается к низу */
+.footer {
+    max-width: 1200px;
+    width: 100%;
+    margin-top: auto;   /* ← добавить — толкает футер вниз */
+    padding: 2rem 1.5rem 2.5rem;
+    ...
+}
+
+        /* ХЕДЕР (такой же, как на главной) */
+        .site-header {
+            position: sticky; top: 0; z-index: 1000; width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(16px);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+            border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+            transition: box-shadow 0.25s ease;
+            margin: 0 -1.5rem; width: calc(100% + 3rem);
+        }
+        .site-header.scrolled { box-shadow: 0 6px 20px -12px rgba(13, 30, 58, 0.15); }
+        .site-header-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0.85rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        }
+        .site-logo {
+            display: inline-flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #0d1e3a; font-weight: 800; font-size: 1.15rem;
+        }
+        .site-logo-mark {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: #fff; border-radius: 12px; font-size: 1rem; font-weight: 900;
+            box-shadow: 0 8px 18px -8px rgba(91,124,250,0.55);
+        }
+        .site-nav { display: flex; align-items: center; gap: 4px; }
+        .site-nav-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 0.5rem 0.9rem; font-size: 0.88rem; font-weight: 600;
+            color: #4b5e7a; text-decoration: none; border-radius: 40px;
+            transition: background 0.2s, color 0.2s; white-space: nowrap;
+        }
+        .site-nav-link:hover { background: #eef2ff; color: var(--primary-dark); }
+        .site-nav-link.active { background: var(--primary-soft); color: var(--primary-dark); }
+        .site-nav-tg {
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            color: #fff; box-shadow: 0 8px 18px -8px rgba(34, 158, 217, 0.5);
+        }
+        .site-nav-link.site-nav-tg:hover {
+    background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+    color: #fff;
+    filter: brightness(1.08);
+}
+
+        /* КРОШКИ */
+        /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
+.breadcrumbs {
+    max-width: 1200px;
+    margin: 1.2rem auto 1.5rem;
+    padding: 0 0.25rem;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Стрелка-разделитель */
+.breadcrumbs li + li::before {
+    content: '›';
+    color: #b8c6da;
+    font-size: 1.05rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+/* Стиль ссылки-пилюли */
+.breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 0.85rem;
+    background: #ffffff;
+    border: 1px solid rgba(180, 200, 225, 0.5);
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #4b5e7a;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.breadcrumbs a:hover {
+    background: #eef2ff;
+    border-color: rgba(91,124,250, 0.5);
+    color: var(--primary-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Иконка домика / блога */
+.breadcrumbs a i {
+    font-size: 0.75rem;
+    color: #8a9bb5;
+    transition: color 0.2s;
+}
+
+.breadcrumbs a:hover i {
+    color: var(--primary);
+}
+
+/* Текущая страница */
+.breadcrumbs [aria-current="page"] {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    background: var(--primary-soft);
+    border: 1px solid transparent;
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+    .breadcrumbs {
+        font-size: 0.75rem;
+        margin: 1rem auto 1rem;
+        padding: 0;
+    }
+    .breadcrumbs a,
+    .breadcrumbs [aria-current="page"] {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+    .breadcrumbs li + li::before {
+        font-size: 0.9rem;
+    }
+}
+
+        /* ЗАГОЛОВОК БЛОГА */
+        .blog-hero { text-align: center; margin-bottom: 2.5rem; }
+        .blog-hero h1 {
+            font-size: 2.4rem; font-weight: 800; color: #0d1e3a;
+            letter-spacing: -0.02em; margin-bottom: 0.7rem; line-height: 1.15;
+        }
+        .blog-hero p {
+            font-size: 1.1rem; color: #5c6f8c; max-width: 620px; margin: 0 auto; line-height: 1.5;
+        }
+
+        /* СЕТКА СТАТЕЙ */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: #ffffff;
+            border: 1px solid rgba(210, 225, 240, 0.6);
+            border-radius: 24px;
+            padding: 1.6rem 1.5rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex; flex-direction: column;
+            box-shadow: 0 10px 25px -15px rgba(13,30,58,0.1);
+            transition: transform 0.25s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -20px rgba(13,30,58,0.2);
+            border-color: rgba(91,124,250,0.4);
+        }
+
+        .article-tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-dark);
+            background: var(--primary-soft);
+            padding: 0.35rem 0.8rem;
+            border-radius: 40px;
+            width: fit-content;
+            margin-bottom: 1rem;
+        }
+
+        .article-card h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0d1e3a;
+            line-height: 1.35;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .article-card p {
+            font-size: 0.9rem;
+            color: #5c6f8c;
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .article-card-meta {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 0.78rem;
+            color: #8a9bb5;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(180, 200, 225, 0.5);
+        }
+        .article-card-meta span { display: inline-flex; align-items: center; gap: 5px; }
+
+        /* ЗАГЛУШКА, ЕСЛИ СТАТЕЙ МАЛО */
+        .blog-hint {
+            max-width: 780px; margin: 2.5rem auto 0;
+            background: #f8fbff; border: 1px dashed rgba(180, 200, 225, 0.7);
+            border-radius: 20px; padding: 1.2rem 1.4rem;
+            font-size: 0.9rem; color: #5c6f8c; text-align: center; line-height: 1.55;
+        }
+
+        /* ФУТЕР */
+        .footer {
+            max-width: 1200px; width: 100%; margin-top: 4rem;
+            padding: 2rem 1.5rem 2.5rem;
+            border-top: 1px solid rgba(180, 200, 225, 0.5);
+            background: #ffffff; border-radius: 32px 32px 0 0;
+            box-shadow: 0 -10px 30px -20px rgba(0, 20, 40, 0.1);
+            color: #5c6f8c; font-size: 0.8rem; line-height: 1.6;
+            display: flex; flex-direction: column; align-items: center; text-align: left;
+        }
+        .footer-content { max-width: 1000px; width: 100%; }
+        .footer p { margin-bottom: 1rem; }
+        .footer .copyright {
+            margin-top: 1.5rem; padding-top: 1.2rem;
+            border-top: 1px dashed rgba(180, 200, 225, 0.6);
+            text-align: center; font-weight: 500; color: #3f5370; font-size: 0.82rem;
+        }
+        .footer .disclaimer {
+            background: #f8fbff; padding: 1rem 1.2rem; border-radius: 20px;
+            border-left: 4px solid #a9c4e8; margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 0 1rem; }
+            .site-header { margin: 0 -1rem; width: calc(100% + 2rem); }
+            .site-header-inner { padding: 0.7rem 1rem; }
+            .site-logo-text { font-size: 1rem; }
+            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+            .site-nav-link { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
+            .site-nav-link:not(.site-nav-tg) { display: none; }
+            @media (max-width: 640px) {
+    /* вместо .site-nav-link:not(.site-nav-tg) { display: none; } */
+    .site-nav-link:not(.site-nav-tg):not([href*="/blog"]) {
+        display: none;
+    }
+}
+            .breadcrumbs { font-size: 0.74rem; }
+            .blog-hero h1 { font-size: 1.7rem; }
+            .blog-hero p { font-size: 0.95rem; }
+            .articles-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .article-card { padding: 1.3rem 1.2rem; border-radius: 20px; }
+            .article-card h2 { font-size: 1.1rem; }
+            .footer { margin-top: 2.5rem; padding: 1.5rem 1rem 2rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="site-header-inner">
+            <a href="../" class="site-logo">
+                <span class="site-logo-mark">W</span>
+                <span class="site-logo-text">WalletPick</span>
+            </a>
+            <nav class="site-nav" aria-label="Основная навигация">
+    <a href="/" class="site-nav-link active">Главная</a>
+    <a href="/blog/" class="site-nav-link">Блог</a>
+    <a href="#faqSection" class="site-nav-link">Вопросы</a>
+    <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+        <i class="fa-brands fa-telegram"></i>
+        Telegram
+    </a>
+</nav>
+        </div>
+    </header>
+
+    <div class="showcase">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>
+        <li><a href="/"><i class="fa-solid fa-house"></i> Главная</a></li>
+        <li aria-current="page">Блог</li>
+    </ol>
+</nav>
+
+        <div class="blog-hero">
+            <h1>Блог WalletPick</h1>
+            <p>Полезные статьи о микрозаймах, кредитной истории и финансовой грамотности — простым языком, без воды.</p>
+        </div>
+
+        <div class="articles-grid" id="articlesGrid">
+            <!-- СТАТЬЯ 1 -->
+            <a href="chem-mfo-otlichaetsya-ot-banka/index.html" class="article-card">
+                <span class="article-tag"><i class="fa-solid fa-book"></i> Ликбез</span>
+                <h2>Чем МФО отличается от банка: главные отличия и что выбрать</h2>
+                <p>Сумма, срок, ставка, требования к заёмщику и скорость получения — разбираем ключевые различия между микрофинансовой организацией и банком. Когда что выбрать и какие риски учитывать.</p>
+                <div class="article-card-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 30.09.2026</span>
+                    <span><i class="fa-regular fa-clock"></i> 6 мин</span>
+                </div>
+            </a>
+
+            <!-- Сюда добавляйте новые статьи по образцу выше -->
+        </div>
+
+        <div class="blog-hint">
+            <i class="fa-solid fa-lightbulb" style="color: #e6a700; margin-right: 6px;"></i>
+            Мы регулярно публикуем новые статьи о микрозаймах. Заходите почаще — или напишите нам в Telegram, если нужна помощь с выбором МФО.
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="disclaimer">
+                <p>Материалы блога носят информационный характер и не являются финансовой рекомендацией. Условия выдачи займов уточняйте на сайте выбранной кредитной организации.</p>
+            </div>
+            <p><a href="/blog/" style="color:#5b7cfa;">Блог — статьи о микрозаймах</a></p>
+            <p><a href="../privacy.html" style="color:#5b7cfa;">Политика обработки персональных данных</a></p>
+            <p class="copyright">© 2026 WalletPick. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+        function onScroll() {
+            if (window.scrollY > 20) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    })();
+    </script>
+</body>
+</html>
