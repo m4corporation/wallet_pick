@@ -1427,26 +1427,19 @@
         }
 
         @media (max-width: 640px) {
-    /* ... */
-
-    .site-header-inner { padding: 0.7rem 1rem; }
-    .site-logo-text { font-size: 1rem; }
-    .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
-
-    .site-nav {
-        gap: 4px;
-    }
-
-    /* Ссылки-иконки */
     .site-nav-link {
         padding: 0;
         width: 38px;
         height: 38px;
         justify-content: center;
-        font-size: 0;
         border-radius: 50%;
         background: #f4f7fc;
         color: #4b5e7a;
+    }
+
+    /* Скрываем текст, оставляем иконку */
+    .site-nav-link .nav-label {
+        display: none;
     }
 
     .site-nav-link i {
