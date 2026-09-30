@@ -266,53 +266,105 @@
         }
 
         /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
-        .breadcrumbs {
-            max-width: 1200px;
-            margin: 1.2rem auto 1.5rem;
-            padding: 0 0.25rem;
-            font-size: 0.82rem;
-            color: #8a9bb5;
-        }
+.breadcrumbs {
+    max-width: 1200px;
+    margin: 1.2rem auto 1.5rem;
+    padding: 0 0.25rem;
+}
 
-        .breadcrumbs ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 6px;
-        }
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
 
-        .breadcrumbs li {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+.breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        .breadcrumbs li + li::before {
-            content: '›';
-            color: #b8c6da;
-            font-size: 1.05rem;
-            line-height: 1;
-            margin-right: 2px;
-        }
+/* Стрелка-разделитель */
+.breadcrumbs li + li::before {
+    content: '›';
+    color: #b8c6da;
+    font-size: 1.05rem;
+    line-height: 1;
+    font-weight: 400;
+}
 
-        .breadcrumbs a {
-            color: #5b7cfa;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+/* Стиль ссылки-пилюли */
+.breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 0.85rem;
+    background: #ffffff;
+    border: 1px solid rgba(180, 200, 225, 0.5);
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #4b5e7a;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+    line-height: 1.2;
+    white-space: nowrap;
+}
 
-        .breadcrumbs a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
+.breadcrumbs a:hover {
+    background: #eef2ff;
+    border-color: rgba(91,124,250, 0.5);
+    color: var(--primary-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
 
-        .breadcrumbs [aria-current="page"] {
-            color: #5c6f8c;
-            font-weight: 500;
-        }
+/* Иконка домика / блога */
+.breadcrumbs a i {
+    font-size: 0.75rem;
+    color: #8a9bb5;
+    transition: color 0.2s;
+}
+
+.breadcrumbs a:hover i {
+    color: var(--primary);
+}
+
+/* Текущая страница */
+.breadcrumbs [aria-current="page"] {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    background: var(--primary-soft);
+    border: 1px solid transparent;
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+    .breadcrumbs {
+        font-size: 0.75rem;
+        margin: 1rem auto 1rem;
+        padding: 0;
+    }
+    .breadcrumbs a,
+    .breadcrumbs [aria-current="page"] {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+    .breadcrumbs li + li::before {
+        font-size: 0.9rem;
+    }
+}
 
         /* ---------- TELEGRAM-ПОМОЩНИК (существующий) ---------- */
         .tg-helper {
@@ -1403,7 +1455,7 @@
 
             <nav class="site-nav" aria-label="Основная навигация">
                 <a href="/" class="site-nav-link active">Главная</a>
-                <a href="#hotOfferContainer" class="site-nav-link">Горячее</a>
+                <a href="blog/index.html" class="site-nav-link">Блог</a>
                 <a href="#faqSection" class="site-nav-link">Вопросы</a>
                 <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
                     <i class="fa-brands fa-telegram"></i>
@@ -1417,12 +1469,12 @@
 
         <!-- ХЛЕБНЫЕ КРОШКИ -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
-            <ol>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/">Микрозаймы под 0%</a></li>
-                <li aria-current="page">Подборка для новых клиентов</li>
-            </ol>
-        </nav>
+    <ol>
+        <li><a href="/"><i class="fa-solid fa-house"></i> Главная</a></li>
+        <li><a href="/">Микрозаймы под 0%</a></li>
+        <li aria-current="page">Подборка для новых клиентов</li>
+    </ol>
+</nav>
 
         <!-- ЗАГОЛОВОК -->
         <div class="showcase-header">
