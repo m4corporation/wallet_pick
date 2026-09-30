@@ -1418,13 +1418,52 @@
             .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
             .site-nav { gap: 2px; }
             .site-nav-link { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
-            .site-nav-link:not(.site-nav-tg) { display: none; }
+            
 
             .breadcrumbs { font-size: 0.74rem; margin: 1rem auto 1rem; }
             .breadcrumbs li + li::before { font-size: 0.9rem; }
 
             .psk-helper { display: none; }
         }
+
+        @media (max-width: 640px) {
+    /* ... */
+
+    .site-header-inner { padding: 0.7rem 1rem; }
+    .site-logo-text { font-size: 1rem; }
+    .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+
+    .site-nav {
+        gap: 4px;
+    }
+
+    /* Ссылки-иконки */
+    .site-nav-link {
+        padding: 0;
+        width: 38px;
+        height: 38px;
+        justify-content: center;
+        font-size: 0;
+        border-radius: 50%;
+        background: #f4f7fc;
+        color: #4b5e7a;
+    }
+
+    .site-nav-link i {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .site-nav-link.active {
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+    }
+
+    .site-nav-link.site-nav-tg {
+        background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+        color: #fff;
+    }
+}
 
         @media (max-width: 400px) {
             .offers-grid { grid-template-columns: 1fr; }
