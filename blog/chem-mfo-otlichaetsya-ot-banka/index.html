@@ -432,10 +432,56 @@
             body { padding: 0 1rem; }
             .site-header { margin: 0 -1rem; width: calc(100% + 2rem); }
             .site-header-inner { padding: 0.7rem 1rem; }
-            .site-logo-text { font-size: 1rem; }
-            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
-            .site-nav-link { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
-            .site-nav-link:not(.site-nav-tg) { display: none; }
+.site-logo-text { font-size: 1rem; }
+.site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+
+/* Бургер виден */
+.site-burger { display: inline-flex; }
+
+/* Навигация становится выпадающим меню */
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+    box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 0.6rem 0.9rem 1rem;
+    z-index: 999;
+    animation: slideDown 0.2s ease;
+}
+.site-nav.open { display: flex; }
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.site-nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 12px;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+}
+
+.site-nav-link i {
+    font-size: 0.9rem;
+    color: #8a9bb5;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.site-nav-link:hover i,
+.site-nav-link.active i { color: var(--primary-dark); }
+.site-nav-link.site-nav-tg i { color: #fff; }
             .breadcrumbs { font-size: 0.74rem; }
             .article-header h1 { font-size: 1.5rem; }
             .article-body h2 { font-size: 1.25rem; }
@@ -447,20 +493,34 @@
 <body>
     <!-- ХЕДЕР -->
     <header class="site-header" id="siteHeader">
-        <div class="site-header-inner">
-            <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
-                <span class="site-logo-mark">W</span>
-                <span class="site-logo-text">WalletPick</span>
+    <div class="site-header-inner">
+        <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
+            <span class="site-logo-mark">W</span>
+            <span class="site-logo-text">WalletPick</span>
+        </a>
+
+        <!-- Бургер -->
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Навигация -->
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+            <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link">
+                <i class="fa-solid fa-house"></i>
+                Главная
             </a>
-            <nav class="site-nav" aria-label="Основная навигация">
-                <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link">Главная</a>
-                <a href="https://m4corporation.github.io/wallet_pick/blog/index.html" class="site-nav-link active">Блог</a>
-                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
-                    <i class="fa-brands fa-telegram"></i> Telegram
-                </a>
-            </nav>
-        </div>
-    </header>
+            <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link active">
+                <i class="fa-solid fa-book"></i>
+                Блог
+            </a>
+            <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+                <i class="fa-brands fa-telegram"></i>
+                Telegram
+            </a>
+        </nav>
+    </div>
+</header>
 
     <div class="showcase">
         <!-- ХЛЕБНЫЕ КРОШКИ -->
@@ -582,7 +642,7 @@
                 <ul>
                     <li><strong>Навязанные услуги.</strong> Страховка, консультации, «пакеты» — всё это увеличивает переплату. Внимательно читайте договор перед подписанием.</li>
                     <li><strong>Льготный период с условиями.</strong> «0% на первый займ» действует только при строгом соблюдении правил. Одна просрочка — и ставка становится стандартной.</li>
-                    <li><strong>Просрочка в МФО.</strong> Штрафы и пени растут быстро. Если не платить, долг может быть передан коллекторам [ 4].</li>
+                    <li><strong>Просрочка в МФО.</strong> Штрафы и пени растут быстро. Если не платить, долг может быть передан коллекторам.</li>
                     <li><strong>Новый займ для погашения старого.</strong> Это прямой путь в долговую яму. Брать деньги, чтобы закрыть другой долг — почти всегда плохая идея.</li>
                 </ul>
 
@@ -659,6 +719,46 @@
         });
     });
     </script>
+    <script>
+(function() {
+    const burger = document.getElementById('siteBurger');
+    const nav = document.getElementById('siteNav');
+    if (!burger || !nav) return;
+
+    function closeMenu() {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    function openMenu() {
+        nav.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+        burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+
+    burger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (nav.classList.contains('open')) closeMenu();
+        else openMenu();
+    });
+
+    nav.querySelectorAll('.site-nav-link').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (nav.classList.contains('open') &&
+            !nav.contains(e.target) &&
+            !burger.contains(e.target)) closeMenu();
+    });
+
+    window.addEventListener('hashchange', closeMenu);
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 640) closeMenu();
+    });
+})();
+</script>
 
 </body>
 </html>
