@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /privacy.html
+Disallow: /*?utm_
+Disallow: /*?yclid=
+Disallow: /*?gclid=
 
 Sitemap: https://m4corporation.github.io/wallet_pick/sitemap.xml
