@@ -9,20 +9,20 @@
 
     <title>Блог WalletPick — статьи о микрозаймах и финансах</title>
     <meta name="description" content="Полезные статьи о микрозаймах, кредитной истории, ПСК и финансовой грамотности. Помогаем разобраться, как выбрать МФО и не попасть в долговую яму.">
-    <link rel="canonical" href="https://ваш-домен.ru/blog/">
+    <link rel="canonical" href="https://m4corporation.github.io/wallet_pick/blog/">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="WalletPick">
     <meta property="og:title" content="Блог WalletPick — статьи о микрозаймах и финансах">
     <meta property="og:description" content="Полезные статьи о микрозаймах, кредитной истории, ПСК и финансовой грамотности.">
-    <meta property="og:url" content="https://ваш-домен.ru/blog/">
-    <meta property="og:image" content="https://ваш-домен.ru/og-image.png">
+    <meta property="og:url" content="https://m4corporation.github.io/wallet_pick/blog/">
+    <meta property="og:image" content="https://m4corporation.github.io/wallet_pick/og-image.png">
     <meta property="og:locale" content="ru_RU">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script type="application/ld+json">
     {
@@ -30,22 +30,22 @@
       "@graph": [
         {
           "@type": "Blog",
-          "@id": "https://ваш-домен.ru/blog/#blog",
+          "@id": "https://m4corporation.github.io/wallet_pick/blog/#blog",
           "name": "Блог WalletPick",
           "description": "Полезные статьи о микрозаймах, кредитной истории и финансовой грамотности",
-          "url": "https://ваш-домен.ru/blog/",
+          "url": "https://m4corporation.github.io/wallet_pick/blog/",
           "inLanguage": "ru-RU",
           "publisher": {
             "@type": "Organization",
             "name": "WalletPick",
-            "logo": { "@type": "ImageObject", "url": "https://ваш-домен.ru/wallet.png" }
+            "logo": { "@type": "ImageObject", "url": "https://m4corporation.github.io/wallet_pick/wallet.png" }
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://ваш-домен.ru/blog/#breadcrumb",
+          "@id": "https://m4corporation.github.io/wallet_pick/blog/#breadcrumb",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ваш-домен.ru/" },
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://m4corporation.github.io/wallet_pick/" },
             { "@type": "ListItem", "position": 2, "name": "Блог" }
           ]
         }
@@ -63,203 +63,223 @@
             --accent: #00c2a8;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%;
+        }
+
         body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fafbfc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 0 1.5rem;
-}
+            font-family: 'Inter', sans-serif;
+            background-color: #fafbfc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            width: 100%;
+            overflow-x: clip;
+            max-width: 100%;
+        }
 
-/* Растягиваем главный контейнер на всю высоту */
-.showcase {
-    max-width: 1200px;
-    width: 100%;
-    flex: 1 0 auto;   /* ← добавить */
-}
+        .showcase {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 1.5rem;
+            flex: 1 0 auto;
+        }
 
-
-
-        /* ХЕДЕР (такой же, как на главной) */
+        /* ---------- ХЕДЕР ---------- */
         .site-header {
-            position: sticky; top: 0; z-index: 1000; width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            margin: 0;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: saturate(180%) blur(16px);
             -webkit-backdrop-filter: saturate(180%) blur(16px);
             border-bottom: 1px solid rgba(210, 225, 240, 0.6);
             transition: box-shadow 0.25s ease;
-            margin: 0 -1.5rem; width: calc(100% + 3rem);
         }
-        .site-header.scrolled { box-shadow: 0 6px 20px -12px rgba(13, 30, 58, 0.15); }
+
+        .site-header.scrolled {
+            box-shadow: 0 6px 20px -12px rgba(13, 30, 58, 0.15);
+        }
+
         .site-header-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0.85rem 1.5rem;
-            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            position: relative;
         }
+
         .site-logo {
-            display: inline-flex; align-items: center; gap: 10px;
-            text-decoration: none; color: #0d1e3a; font-weight: 800; font-size: 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #0d1e3a;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+            transition: opacity 0.2s;
         }
+
+        .site-logo:hover { opacity: 0.85; }
+
         .site-logo-mark {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: #fff; border-radius: 12px; font-size: 1rem; font-weight: 900;
+            color: #fff;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 900;
             box-shadow: 0 8px 18px -8px rgba(91,124,250,0.55);
         }
-        .site-nav { display: flex; align-items: center; gap: 4px; }
-        .site-nav-link {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 0.5rem 0.9rem; font-size: 0.88rem; font-weight: 600;
-            color: #4b5e7a; text-decoration: none; border-radius: 40px;
-            transition: background 0.2s, color 0.2s; white-space: nowrap;
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
-        .site-nav-link:hover { background: #eef2ff; color: var(--primary-dark); }
-        .site-nav-link.active { background: var(--primary-soft); color: var(--primary-dark); }
+
+        .site-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #4b5e7a;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .site-nav-link:hover {
+            background: #eef2ff;
+            color: var(--primary-dark);
+        }
+
+        .site-nav-link.active {
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+        }
+
         .site-nav-tg {
             background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
-            color: #fff; box-shadow: 0 8px 18px -8px rgba(34, 158, 217, 0.5);
+            color: #fff;
+            box-shadow: 0 8px 18px -8px rgba(34, 158, 217, 0.5);
         }
+
         .site-nav-link.site-nav-tg:hover {
-    background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
-    color: #fff;
-    filter: brightness(1.08);
-}
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            color: #fff;
+            filter: brightness(1.08);
+        }
 
-        /* Бургер — по умолчанию скрыт, виден только на мобильных */
-.site-burger {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #0d1e3a;
-    font-size: 1.3rem;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s, color 0.2s;
-    z-index: 1001;
-}
+        /* Бургер */
+        .site-burger {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #0d1e3a;
+            width: 42px;
+            height: 42px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+            z-index: 1001;
+            flex-shrink: 0;
+        }
+        .site-burger:hover { background: #eef2ff; color: var(--primary-dark); }
+        .site-burger:active { transform: scale(0.95); }
+        .site-burger i { display: block; line-height: 1; font-size: 1.4rem; }
 
-.site-burger:hover {
-    background: #eef2ff;
-    color: var(--primary-dark);
-}
-
-.site-burger:active {
-    transform: scale(0.95);
-}
-
-.site-burger i {
-    transition: transform 0.2s;
-}
-
-        /* КРОШКИ */
         /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
-.breadcrumbs {
-    max-width: 1200px;
-    margin: 1.2rem auto 1.5rem;
-    padding: 0 0.25rem;
-}
+        .breadcrumbs {
+            max-width: 1200px;
+            margin: 1.2rem auto 1.5rem;
+            padding: 0 0.25rem;
+        }
+        .breadcrumbs ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        .breadcrumbs li { display: inline-flex; align-items: center; gap: 8px; }
+        .breadcrumbs li + li::before {
+            content: '›';
+            color: #b8c6da;
+            font-size: 1.05rem;
+            line-height: 1;
+            font-weight: 400;
+        }
+        .breadcrumbs a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.4rem 0.85rem;
+            background: #ffffff;
+            border: 1px solid rgba(180, 200, 225, 0.5);
+            border-radius: 40px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #4b5e7a;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .breadcrumbs a:hover {
+            background: #eef2ff;
+            border-color: rgba(91,124,250, 0.5);
+            color: var(--primary-dark);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .breadcrumbs a i {
+            font-size: 0.75rem;
+            color: #8a9bb5;
+            transition: color 0.2s;
+        }
+        .breadcrumbs a:hover i { color: var(--primary); }
+        .breadcrumbs [aria-current="page"] {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.85rem;
+            background: var(--primary-soft);
+            border: 1px solid transparent;
+            border-radius: 40px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            white-space: nowrap;
+        }
 
-.breadcrumbs ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-}
-
-.breadcrumbs li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Стрелка-разделитель */
-.breadcrumbs li + li::before {
-    content: '›';
-    color: #b8c6da;
-    font-size: 1.05rem;
-    line-height: 1;
-    font-weight: 400;
-}
-
-/* Стиль ссылки-пилюли */
-.breadcrumbs a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0.4rem 0.85rem;
-    background: #ffffff;
-    border: 1px solid rgba(180, 200, 225, 0.5);
-    border-radius: 40px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #4b5e7a;
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
-    line-height: 1.2;
-    white-space: nowrap;
-}
-
-.breadcrumbs a:hover {
-    background: #eef2ff;
-    border-color: rgba(91,124,250, 0.5);
-    color: var(--primary-dark);
-    text-decoration: none;
-    transform: translateY(-1px);
-}
-
-/* Иконка домика / блога */
-.breadcrumbs a i {
-    font-size: 0.75rem;
-    color: #8a9bb5;
-    transition: color 0.2s;
-}
-
-.breadcrumbs a:hover i {
-    color: var(--primary);
-}
-
-/* Текущая страница */
-.breadcrumbs [aria-current="page"] {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4rem 0.85rem;
-    background: var(--primary-soft);
-    border: 1px solid transparent;
-    border-radius: 40px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--primary-dark);
-    line-height: 1.2;
-    white-space: nowrap;
-}
-
-/* Адаптив */
-@media (max-width: 640px) {
-    .breadcrumbs {
-        font-size: 0.75rem;
-        margin: 1rem auto 1rem;
-        padding: 0;
-    }
-    .breadcrumbs a,
-    .breadcrumbs [aria-current="page"] {
-        padding: 0.35rem 0.7rem;
-        font-size: 0.75rem;
-    }
-    .breadcrumbs li + li::before {
-        font-size: 0.9rem;
-    }
-}
-
-        /* ЗАГОЛОВОК БЛОГА */
+        /* ---------- ЗАГОЛОВОК БЛОГА ---------- */
         .blog-hero { text-align: center; margin-bottom: 2.5rem; }
         .blog-hero h1 {
             font-size: 2.4rem; font-weight: 800; color: #0d1e3a;
@@ -269,7 +289,7 @@
             font-size: 1.1rem; color: #5c6f8c; max-width: 620px; margin: 0 auto; line-height: 1.5;
         }
 
-        /* СЕТКА СТАТЕЙ */
+        /* ---------- СЕТКА СТАТЕЙ ---------- */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -332,7 +352,7 @@
         }
         .article-card-meta span { display: inline-flex; align-items: center; gap: 5px; }
 
-        /* ЗАГЛУШКА, ЕСЛИ СТАТЕЙ МАЛО */
+        /* ---------- ЗАГЛУШКА ---------- */
         .blog-hint {
             max-width: 780px; margin: 2.5rem auto 0;
             background: #f8fbff; border: 1px dashed rgba(180, 200, 225, 0.7);
@@ -340,9 +360,10 @@
             font-size: 0.9rem; color: #5c6f8c; text-align: center; line-height: 1.55;
         }
 
-        /* ФУТЕР */
+        /* ---------- ФУТЕР ---------- */
         .footer {
-            max-width: 1200px; width: 100%; margin-top: auto;
+            max-width: 1200px; width: 100%;
+            margin: 4rem auto 0;
             padding: 2rem 1.5rem 2.5rem;
             border-top: 1px solid rgba(180, 200, 225, 0.5);
             background: #ffffff; border-radius: 32px 32px 0 0;
@@ -352,6 +373,7 @@
         }
         .footer-content { max-width: 1000px; width: 100%; }
         .footer p { margin-bottom: 1rem; }
+        .footer p:last-child { margin-bottom: 0; }
         .footer .copyright {
             margin-top: 1.5rem; padding-top: 1.2rem;
             border-top: 1px dashed rgba(180, 200, 225, 0.6);
@@ -362,124 +384,174 @@
             border-left: 4px solid #a9c4e8; margin-bottom: 1.2rem;
         }
 
+        /* ---------- КРАСИВЫЕ ССЫЛКИ В ФУТЕРЕ ---------- */
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 1.4rem 0 0.5rem;
+        }
+
+        .footer-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.55rem 1.1rem;
+            background: #f4f7fc;
+            border: 1px solid rgba(180, 200, 225, 0.5);
+            border-radius: 60px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #4b5e7a;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+            line-height: 1.2;
+        }
+
+        .footer-nav-link i {
+            font-size: 0.8rem;
+            color: #8a9bb5;
+            transition: color 0.2s;
+        }
+
+        .footer-nav-link:hover {
+            background: #eef2ff;
+            border-color: rgba(91,124,250, 0.5);
+            color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .footer-nav-link:hover i {
+            color: var(--primary);
+        }
+
+        /* ---------- АДАПТИВ ---------- */
         @media (max-width: 640px) {
-            body { padding: 0 1rem; }
-            .site-header { margin: 0 -1rem; width: calc(100% + 2rem); }
+            .showcase { padding: 0 1rem; }
+
             .site-header-inner { padding: 0.7rem 1rem; }
-.site-logo-text { font-size: 1rem; }
-.site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+            .site-logo-text { font-size: 1rem; }
+            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
 
-/* Показываем бургер */
-.site-burger {
-    display: inline-flex;
-}
+            .site-burger { display: inline-flex; }
 
-/* Навигация становится выпадающим меню */
-.site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(210, 225, 240, 0.6);
-    box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    padding: 0.6rem 0.9rem 1rem;
-    z-index: 999;
-    animation: slideDown 0.2s ease;
-}
+            .site-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                background: #ffffff;
+                border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+                box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 2px;
+                padding: 0.6rem 0.9rem 1rem;
+                z-index: 999;
+                animation: slideDown 0.2s ease;
+            }
+            .site-nav.open { display: flex; }
 
-.site-nav.open {
-    display: flex;
-}
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+            .site-nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.92rem;
+                border-radius: 12px;
+                justify-content: flex-start;
+                width: 100%;
+                gap: 10px;
+            }
+            .site-nav-link i {
+                font-size: 0.9rem;
+                color: #8a9bb5;
+                width: 18px;
+                text-align: center;
+                flex-shrink: 0;
+            }
+            .site-nav-link:hover i,
+            .site-nav-link.active i { color: var(--primary-dark); }
+            .site-nav-link.site-nav-tg i { color: #fff; }
 
-.site-nav-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.92rem;
-    border-radius: 12px;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 10px;
-}
+            .breadcrumbs { font-size: 0.74rem; margin: 1rem auto 1rem; padding: 0; }
+            .breadcrumbs a,
+            .breadcrumbs [aria-current="page"] {
+                padding: 0.35rem 0.7rem;
+                font-size: 0.75rem;
+            }
+            .breadcrumbs li + li::before { font-size: 0.9rem; }
 
-.site-nav-link i {
-    font-size: 0.9rem;
-    color: #8a9bb5;
-    width: 18px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.site-nav-link:hover i,
-.site-nav-link.active i {
-    color: var(--primary-dark);
-}
-
-.site-nav-link.site-nav-tg i {
-    color: #fff;
-}
-         
-            .breadcrumbs { font-size: 0.74rem; }
             .blog-hero h1 { font-size: 1.7rem; }
             .blog-hero p { font-size: 0.95rem; }
             .articles-grid { grid-template-columns: 1fr; gap: 1rem; }
             .article-card { padding: 1.3rem 1.2rem; border-radius: 20px; }
             .article-card h2 { font-size: 1.1rem; }
+
             .footer { margin-top: 2.5rem; padding: 1.5rem 1rem 2rem; font-size: 0.75rem; }
+
+            .footer-nav {
+                gap: 0.5rem;
+                margin: 1.2rem 0 0.3rem;
+            }
+            .footer-nav-link {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.78rem;
+            }
+            .footer-nav-link i { font-size: 0.75rem; }
         }
     </style>
 </head>
 
 <body>
+    <!-- ХЕДЕР -->
     <header class="site-header" id="siteHeader">
-    <div class="site-header-inner">
-        <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
-            <span class="site-logo-mark">W</span>
-            <span class="site-logo-text">WalletPick</span>
-        </a>
+        <div class="site-header-inner">
+            <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
+                <span class="site-logo-mark">W</span>
+                <span class="site-logo-text">WalletPick</span>
+            </a>
 
-        <!-- Бургер (виден только на мобильных) -->
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-        <!-- Навигация -->
-        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
-            <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link active">
-                <i class="fa-solid fa-house"></i>
-                Главная
-            </a>
-            <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link">
-                <i class="fa-solid fa-book"></i>
-                Блог
-            </a>
-            <a href="#faqSection" class="site-nav-link">
-                <i class="fa-solid fa-circle-question"></i>
-                Вопросы
-            </a>
-            <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
-                <i class="fa-brands fa-telegram"></i>
-                Telegram
-            </a>
-        </nav>
-    </div>
-</header>
+            <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+                <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link">
+                    <i class="fa-solid fa-house"></i> Главная
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/credit-cards/" class="site-nav-link">
+                    <i class="fa-solid fa-credit-card"></i> Кредитные карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/debit-cards/" class="site-nav-link">
+                    <i class="fa-solid fa-wallet"></i> Дебетовые карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link active">
+                    <i class="fa-solid fa-book"></i> Блог
+                </a>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+            </nav>
+        </div>
+    </header>
 
     <div class="showcase">
+
+        <!-- ХЛЕБНЫЕ КРОШКИ -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
-    <ol>
-        <li><a href="https://m4corporation.github.io/wallet_pick/"><i class="fa-solid fa-house"></i> Главная</a></li>
-        <li aria-current="page">Блог</li>
-    </ol>
-</nav>
+            <ol>
+                <li><a href="https://m4corporation.github.io/wallet_pick/"><i class="fa-solid fa-house"></i> Главная</a></li>
+                <li aria-current="page">Блог</li>
+            </ol>
+        </nav>
 
         <div class="blog-hero">
             <h1>Блог WalletPick</h1>
@@ -487,6 +559,7 @@
         </div>
 
         <div class="articles-grid" id="articlesGrid">
+
             <!-- СТАТЬЯ 1 -->
             <a href="chem-mfo-otlichaetsya-ot-banka/index.html" class="article-card">
                 <span class="article-tag"><i class="fa-solid fa-book"></i> Ликбез</span>
@@ -498,26 +571,114 @@
                 </div>
             </a>
 
-            <!-- Сюда добавляйте новые статьи по образцу выше -->
+            <!-- СТАТЬЯ 2 -->
+            <a href="chto-proishodit-s-kreditkami-2026/index.html" class="article-card">
+                <span class="article-tag"><i class="fa-solid fa-bolt"></i> Актуально</span>
+                <h2>Что происходит с кредитными картами в 2026: ужесточение ПСК и что делать</h2>
+                <p>Банк России ужесточил правила по кредитным картам: промопериоды больше не считаются базой для ПСК. Разбираем, что изменилось и как выбрать карту в новых реалиях.</p>
+                <div class="article-card-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+                    <span><i class="fa-regular fa-clock"></i> 7 мин</span>
+                </div>
+            </a>
+            
+            
+            <!-- СТАТЬЯ 3 -->
+            <a href="kak-ne-popast-na-moshennikov/index.html" class="article-card">
+    <span class="article-tag"><i class="fa-solid fa-shield-halved"></i> Безопасность</span>
+    <h2>Как не попасть на мошенников при оформлении займа: главные признаки</h2>
+    <p>Проверка в реестре ЦБ, подозрительные сайты, требования предоплаты и давление — разбираем главные признаки мошенников при оформлении займа.</p>
+    <div class="article-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+        <span><i class="fa-regular fa-clock"></i> 7 мин</span>
+    </div>
+</a>
+            
+            <!-- СТАТЬЯ 4 -->
+            <a href="novye-pravila-zaymov-2026/index.html" class="article-card">
+    <span class="article-tag"><i class="fa-solid fa-gavel"></i> Актуально</span>
+    <h2>Новые правила займов с 1 октября 2026: «правило двух займов» и что делать</h2>
+    <p>С 1 октября 2026 МФО не могут выдать третий дорогой займ. Разбираем правило двух займов, ПСК, лимит переплаты 100% и что будет с 1 апреля 2027.</p>
+    <div class="article-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+        <span><i class="fa-regular fa-clock"></i> 6 мин</span>
+    </div>
+</a>
+            
+            <!-- СТАТЬЯ 5 -->
+            <a href="mfo-pod-0-dlya-novyh-2026/index.html" class="article-card">
+    <span class="article-tag"><i class="fa-solid fa-percent"></i> Рейтинг</span>
+    <h2>МФО с 0% для новых клиентов 2026: рейтинг и условия</h2>
+    <p>Подборка МФО с первым займом под 0% для новых клиентов. Суммы, сроки, что проверить до оформления и почему займ может стать платным.</p>
+    <div class="article-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+        <span><i class="fa-regular fa-clock"></i> 6 мин</span>
+    </div>
+</a>
+            <!-- СТАТЬЯ 6 -->
+            <a href="pochemu-otkazyvayut-v-zaymah-2026/index.html" class="article-card">
+    <span class="article-tag"><i class="fa-solid fa-circle-xmark"></i> Актуально</span>
+    <h2>Почему 9 из 10 получают отказы по займам в 2026 и что делать</h2>
+    <p>Доля отказов по кредитам достигла 77,9% в 2026. Разбираем причины: ПДН, подтверждение доходов, новые правила ЦБ. Пошаговый план, что делать после отказа.</p>
+    <div class="article-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+        <span><i class="fa-regular fa-clock"></i> 7 мин</span>
+    </div>
+</a>
+            
+            <!-- СТАТЬЯ 7 -->
+            <a href="finansovye-strahi-2026/index.html" class="article-card">
+    <span class="article-tag"><i class="fa-solid fa-brain"></i> Психология</span>
+    <h2>Финансовые страхи россиян в 2026: чего боятся и как защититься</h2>
+    <p>Инфляция, мошенники, потеря работы — главные финансовые страхи 2026 года. Разбираем, почему россияне боятся и как защититься: самозапрет, подушка, снижение ПДН.</p>
+    <div class="article-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> 02.10.2026</span>
+        <span><i class="fa-regular fa-clock"></i> 6 мин</span>
+    </div>
+</a>
+
         </div>
 
         <div class="blog-hint">
             <i class="fa-solid fa-lightbulb" style="color: #e6a700; margin-right: 6px;"></i>
-            Мы регулярно публикуем новые статьи о микрозаймах. Заходите почаще — или напишите нам в Telegram, если нужна помощь с выбором МФО.
+            Мы регулярно публикуем новые статьи о финансах. Заходите почаще — или напишите нам в Telegram, если нужна помощь с выбором продукта банка или МФО.
         </div>
     </div>
 
+    <!-- ФУТЕР -->
     <footer class="footer">
         <div class="footer-content">
             <div class="disclaimer">
                 <p>Материалы блога носят информационный характер и не являются финансовой рекомендацией. Условия выдачи займов уточняйте на сайте выбранной кредитной организации.</p>
             </div>
-            <p><a href="/blog/" style="color:#5b7cfa;">Блог — статьи о микрозаймах</a></p>
-            <p><a href="../privacy.html" style="color:#5b7cfa;">Политика обработки персональных данных</a></p>
+
+            <!-- Красивые ссылки в футере -->
+            <nav class="footer-nav" aria-label="Навигация в футере">
+                <a href="https://m4corporation.github.io/wallet_pick/" class="footer-nav-link">
+                    <i class="fa-solid fa-house"></i> Главная
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/credit-cards/" class="footer-nav-link">
+                    <i class="fa-solid fa-credit-card"></i> Кредитные карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/debit-cards/" class="footer-nav-link">
+                    <i class="fa-solid fa-wallet"></i> Дебетовые карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/blog/" class="footer-nav-link">
+                    <i class="fa-solid fa-book"></i> Блог
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/privacy.html" class="footer-nav-link">
+                    <i class="fa-solid fa-shield-halved"></i> Политика конфиденциальности
+                </a>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+            </nav>
+
             <p class="copyright">© 2026 WalletPick. Все права защищены.</p>
         </div>
     </footer>
 
+    <!-- СКРИПТ: ХЕДЕР SCROLLED -->
     <script>
     (function() {
         const header = document.querySelector('.site-header');
@@ -531,55 +692,45 @@
     })();
     </script>
 
+    <!-- СКРИПТ: БУРГЕР -->
     <script>
-(function() {
-    const burger = document.getElementById('siteBurger');
-    const nav = document.getElementById('siteNav');
-    if (!burger || !nav) return;
+    (function() {
+        const burger = document.getElementById('siteBurger');
+        const nav = document.getElementById('siteNav');
+        if (!burger || !nav) return;
 
-    function closeMenu() {
-        nav.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-
-    function openMenu() {
-        nav.classList.add('open');
-        burger.setAttribute('aria-expanded', 'true');
-        burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    }
-
-    burger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (nav.classList.contains('open')) {
-            closeMenu();
-        } else {
-            openMenu();
+        function closeMenu() {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
-    });
-
-    // Закрываем меню при клике по ссылке
-    nav.querySelectorAll('.site-nav-link').forEach(function(link) {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Закрываем меню при клике вне его
-    document.addEventListener('click', function(e) {
-        if (nav.classList.contains('open') &&
-            !nav.contains(e.target) &&
-            !burger.contains(e.target)) {
-            closeMenu();
+        function openMenu() {
+            nav.classList.add('open');
+            burger.setAttribute('aria-expanded', 'true');
+            burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         }
-    });
 
-    // Закрываем при клике по якорю (для #faqSection)
-    window.addEventListener('hashchange', closeMenu);
+        burger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (nav.classList.contains('open')) closeMenu();
+            else openMenu();
+        });
 
-    // Если ширина окна становится больше 640 — закрываем меню
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 640) closeMenu();
-    });
-})();
-</script>
+        nav.querySelectorAll('.site-nav-link').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('open') &&
+                !nav.contains(e.target) &&
+                !burger.contains(e.target)) closeMenu();
+        });
+
+        window.addEventListener('hashchange', closeMenu);
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 640) closeMenu();
+        });
+    })();
+    </script>
 </body>
 </html>
