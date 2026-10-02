@@ -265,36 +265,6 @@
             filter: brightness(1.08);
         }
 
-        /* Бургер — по умолчанию скрыт, виден только на мобильных */
-.site-burger {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #0d1e3a;
-    font-size: 1.3rem;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s, color 0.2s;
-    z-index: 1001;
-}
-
-.site-burger:hover {
-    background: #eef2ff;
-    color: var(--primary-dark);
-}
-
-.site-burger:active {
-    transform: scale(0.95);
-}
-
-.site-burger i {
-    transition: transform 0.2s;
-}
-
         /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
 .breadcrumbs {
     max-width: 1200px;
@@ -1340,8 +1310,6 @@
             .showcase-header h1 {
                 font-size: clamp(2.1rem, 9vw, 2.8rem);
                 letter-spacing: -0.02em;
-
-                
             }
 
             .showcase-header p { font-size: 1rem; }
@@ -1446,96 +1414,17 @@
             }
 
             .site-header-inner { padding: 0.7rem 1rem; }
-.site-logo-text { font-size: 1rem; }
-.site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
-
-/* Показываем бургер */
-.site-burger {
-    display: inline-flex;
-}
-
-/* Навигация становится выпадающим меню */
-.site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(210, 225, 240, 0.6);
-    box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    padding: 0.6rem 0.9rem 1rem;
-    z-index: 999;
-    animation: slideDown 0.2s ease;
-}
-
-.site-nav.open {
-    display: flex;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.site-nav-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.92rem;
-    border-radius: 12px;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 10px;
-}
-
-.site-nav-link i {
-    font-size: 0.9rem;
-    color: #8a9bb5;
-    width: 18px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.site-nav-link:hover i,
-.site-nav-link.active i {
-    color: var(--primary-dark);
-}
-
-.site-nav-link.site-nav-tg i {
-    color: #fff;
-}
-            
+            .site-logo-text { font-size: 1rem; }
+            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+            .site-nav { gap: 2px; }
+            .site-nav-link { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
+            .site-nav-link:not(.site-nav-tg) { display: none; }
 
             .breadcrumbs { font-size: 0.74rem; margin: 1rem auto 1rem; }
             .breadcrumbs li + li::before { font-size: 0.9rem; }
 
             .psk-helper { display: none; }
         }
-
-        
-
-    /* Скрываем текст, оставляем иконку */
-    .site-nav-link .nav-label {
-        display: none;
-    }
-
-    .site-nav-link i {
-        font-size: 0.95rem;
-        margin: 0;
-    }
-
-    .site-nav-link.active {
-        background: var(--primary-soft);
-        color: var(--primary-dark);
-    }
-
-    .site-nav-link.site-nav-tg {
-        background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
-        color: #fff;
-    }
-}
 
         @media (max-width: 400px) {
             .offers-grid { grid-template-columns: 1fr; }
@@ -1558,46 +1447,31 @@
 
     <!-- ХЕДЕР -->
     <header class="site-header" id="siteHeader">
-    <div class="site-header-inner">
-        <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
-            <span class="site-logo-mark">W</span>
-            <span class="site-logo-text">WalletPick</span>
-        </a>
+        <div class="site-header-inner">
+            <a href="/" class="site-logo">
+                <span class="site-logo-mark">W</span>
+                <span class="site-logo-text">WalletPick</span>
+            </a>
 
-        <!-- Бургер (виден только на мобильных) -->
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <!-- Навигация -->
-        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
-            <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link active">
-                <i class="fa-solid fa-house"></i>
-                Главная
-            </a>
-            <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link">
-                <i class="fa-solid fa-book"></i>
-                Блог
-            </a>
-            <a href="#faqSection" class="site-nav-link">
-                <i class="fa-solid fa-circle-question"></i>
-                Вопросы
-            </a>
-            <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
-                <i class="fa-brands fa-telegram"></i>
-                Telegram
-            </a>
-        </nav>
-    </div>
-</header>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <a href="/" class="site-nav-link active">Главная</a>
+                <a href="blog/index.html" class="site-nav-link">Блог</a>
+                <a href="#faqSection" class="site-nav-link">Вопросы</a>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+                    <i class="fa-brands fa-telegram"></i>
+                    Telegram
+                </a>
+            </nav>
+        </div>
+    </header>
 
     <div class="showcase">
 
         <!-- ХЛЕБНЫЕ КРОШКИ -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
     <ol>
-        <li><a href="https://m4corporation.github.io/wallet_pick/"><i class="fa-solid fa-house"></i> Главная</a></li>
-        <li><a href="https://m4corporation.github.io/wallet_pick/">Микрозаймы под 0%</a></li>
+        <li><a href="/"><i class="fa-solid fa-house"></i> Главная</a></li>
+        <li><a href="/">Микрозаймы под 0%</a></li>
         <li aria-current="page">Подборка для новых клиентов</li>
     </ol>
 </nav>
@@ -1710,7 +1584,7 @@
         // ============================================================
         // ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ
         // ============================================================
-        const hotOfferName = 'Кекас.ру';
+        const hotOfferName = 'еКапуста';
 
         // ============================================================
         // ДАННЫЕ ОФФЕРОВ
@@ -1726,10 +1600,13 @@
              link: 'https://t.fincpanetwork.ru/click/64288/918?erid=2W5zFK43c2V', 
              psk: '292,000',
              approvalRate: 70,
-             badgeText: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ',
-             badgeColor: 'red',
+             badgeText: 'ВЫГОДНО ДЛЯ НОВЫХ',
+             badgeColor: 'orange',
              maxAmount: 30000,
-             maxTerm: 30 },
+             maxTerm: 30,
+             network: 'fcn'   // для старых шести офферов от FCN
+            },
+
             
             
             { name: 'Webbankir',
@@ -1741,7 +1618,8 @@
              psk: '292,000',
              approvalRate: 60.78,
              maxAmount: 30000,
-             maxTerm: 21 },
+             maxTerm: 21,
+            network: 'fcn'},
             
             
             { name: 'Турбозайм',
@@ -1753,7 +1631,8 @@
              psk: '292,000', 
              approvalRate: 57.2,
              maxAmount: 15000,
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'Быстроденьги',
@@ -1765,7 +1644,8 @@
              psk: '292,000',
              approvalRate: 60,
              maxAmount: 30000,
-             maxTerm: 10 },
+             maxTerm: 10,
+            network: 'fcn'},
             
             
             { name: 'Moneyman',
@@ -1777,18 +1657,21 @@
              psk: '292,000', 
              approvalRate: 60, 
              maxAmount: 15000, 
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'Срочноденьги', 
              description: 'Новым клиентам — до 30 000 ₽ под 0% до 7 дней.', 
              perksTitle: 'Первый займ:', 
              perks: ['0% для нового клиента', 'от 2 000 ₽ до 30 000 ₽', 'до 7 дней без процентов'], 
-             img: 'materials/srochnodengi.svg', link: 'https://t.fincpanetwork.ru/click/64288/38?erid=LjN8Kaxif', 
+             img: 'materials/srochnodengi.svg',
+             link: 'https://t.fincpanetwork.ru/click/64288/38?erid=LjN8Kaxif', 
              psk: '292,000', 
              approvalRate: 68.63, 
              maxAmount: 30000, 
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'CreditPlus', 
@@ -1800,7 +1683,8 @@
              psk: '292,000', 
              approvalRate: 68.63, 
              maxAmount: 30000, 
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'Лайк Мани',
@@ -1812,7 +1696,8 @@
              psk: '292,000', 
              approvalRate: 68.63,
              maxAmount: 15000,
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'Eqvazaim',
@@ -1824,7 +1709,8 @@
              psk: '292,000', 
              approvalRate: 49, 
              maxAmount: 25000, 
-             maxTerm: 7 },
+             maxTerm: 7,
+            network: 'fcn'},
             
             
             { name: 'Кекас.ру',
@@ -1832,24 +1718,82 @@
              perksTitle: 'Первый займ:',
              perks: ['0% первые 3 займа новому клиенту!', 'от 1 000 ₽ до 30 000 ₽', 'до 30 дней без процентов'], 
              img: 'materials/kekas2.png', 
-             link: 'https://pxl.leads.su/click/c947d9309f06a35a34e7775d8eb3e874?erid=2W5zFHdZCrU&sub1={campaign_id}&sub2={ad_id}&sub3={keyword}&sub4={region_name}',
+             link: 'https://pxl.leads.su/click/c947d9309f06a35a34e7775d8eb3e874?erid=2W5zFHdZCrU',
              psk: '292,000', 
              approvalRate: 67, 
              maxAmount: 30000, 
-             maxTerm: 30 },
+             maxTerm: 30,
+             network: 'leads'
+            },
             
             
-       //     { name: 'Zaymigo',
-      //       description: 'Новым клиентам — до 50 000 ₽ под 0% до 21 дней.',
-      //       perksTitle: 'Первый займ:',
-       //      perks: ['0% для нового клиента', 'от 1 000 ₽ до 50 000 ₽', 'до 21 дней без процентов'],
-       //      img: 'materials/zaymigo2.png', 
-       //      link: 'https://pxl.leads.su/click/c947d9309f06a35a34e7775d8eb3e874?erid=2W5zFHdZCrU',
-       //          psk: '292,000',
+            { name: 'еКапуста',
+             description: 'Первый займ под 0% до 30 000 ₽ до 32 дней — только новым клиентам.',
+             perksTitle: 'Первый займ:',
+             perks: ['0% для нового клиента', 'от 100 ₽ до 30 000 ₽', 'до 32 дней без процентов'], 
+             img: 'materials/ekapysta.png', 
+             link: 'https://pxl.leads.su/click/1ba6ea9cf99c187594c658c2b5ade8be?erid=2W5zFJtJ1eg',
+             psk: '292,000', 
+             approvalRate: 67, 
+             maxAmount: 30000, 
+             maxTerm: 32,
+            network: 'leads'},
+            
+            
+            { name: 'Е-заем',
+             description: 'Первый заём для новых клиентов бесплатно.',
+             perksTitle: 'Первый займ:',
+             perks: ['0% для нового клиента', 'от 2000 ₽ до 35 000 ₽', 'до 35 дней без процентов'], 
+             img: 'materials/ezaem.png', 
+             link: 'https://pxl.leads.su/click/bde32ebaa31d5fcd4608af29c3626de9?erid=2W5zFJSNy8L',
+             psk: '292,000', 
+             approvalRate: 67, 
+             maxAmount: 35000, 
+             maxTerm: 35,
+            network: 'leads'},
+            
+            { name: 'Доброзайм',
+             description: 'Для ВСЕХ клиентов — займ бесплатно! Можно получить 4 бесплатных займа в год.',
+             perksTitle: 'Первый займ:',
+             perks: ['0% для нового клиента', 'от 1000 ₽ до 15 000 ₽', 'до 7 дней без процентов'], 
+             img: 'materials/dobrozaim.png', 
+             link: 'https://pxl.leads.su/click/7c9f802b3cf725df5efaff464959ccc7?erid=2W5zFGJFBm3',
+             psk: '292,000', 
+             badgeText: 'АКЦИЯ: ВСЕМ БЕСПЛАТНЫЙ ЗАЙМ!',
+             badgeColor: 'purple',
+             approvalRate: 40, 
+             maxAmount: 15000, 
+             maxTerm: 7,
+            network: 'leads'},
+            
+            { name: 'Credit7',
+             description: 'Новым клиентам — до 30 000 ₽ под 0% до 7 дней.',
+             perksTitle: 'Первый займ:',
+             perks: ['0% для нового клиента', 'от 1000 ₽ до 30 000 ₽', 'до 7 дней без процентов'], 
+             img: 'materials/credit7.png', 
+             link: 'https://pxl.leads.su/click/b3bd0d6452d4ce1862ff4acda2c7e6db?erid=2W5zFG6gg4H',
+             psk: '292,000', 
+            // badgeText: 'АКЦИЯ: ВСЕМ ПЕРВЫЙ ЗАЙМ!',
+            // badgeColor: 'purple',
+             approvalRate: 40, 
+             maxAmount: 30000, 
+             maxTerm: 7,
+            network: 'leads'},
+            
+            
+            
+            
+        //   { name: 'Zaymigo',
+        //     description: 'Новым клиентам — до 50 000 ₽ под 0% до 21 дней.',
+        //     perksTitle: 'Первый займ:',
+        //     perks: ['0% для нового клиента', 'от 1 000 ₽ до 50 000 ₽', 'до 21 дней без процентов'],
+        //    img: 'materials/zaymigo2.png', 
+        //    link: 'https://pxl.leads.su/click/1355c0c5e8039902b435145975fc52ea?erid=2W5zFH1RGYZ',
+        //    psk: '292,000',
         //     approvalRate: 49,
        //      maxAmount: 50000,
-        //     maxTerm: 21 },
-        //     maxTerm: 21 },
+       //     maxTerm: 21,
+       //    network: 'leads'},
             
             
        //     { name: 'Greenmoney',
@@ -1944,7 +1888,7 @@
             }
 
             const zeroBadge = document.createElement('span');
-            const badgeColor = offer.hotBadgeColor || 'blue';
+            const badgeColor = offer.hotBadgeColor || 'green';
             zeroBadge.className = 'zero-badge badge-' + badgeColor;
             zeroBadge.textContent = offer.hotBadgeText || '0%';
             imageDiv.appendChild(zeroBadge);
@@ -1981,20 +1925,30 @@
             btn.innerHTML = 'Получить как новый клиент <i class="fa-solid fa-arrow-right"></i>';
 
             btn.addEventListener('click', function(event) {
-                event.preventDefault();
-                if (typeof ym === 'function') ym(112928603, 'reachGoal', 'hot_offer_click', { offer: offer.name });
-                try {
-                    const url = new URL(offer.link);
-                    ['region_name:sub1','ad_id:sub2','keyword:sub3','client_id:sub4','yclid:sub5','campaign_id:sub6'].forEach(pair => {
-                        const [key, sub] = pair.split(':');
-                        const val = localStorage.getItem(key);
-                        if (val) url.searchParams.set(sub, val);
-                    });
-                    window.open(url.toString(), '_blank');
-                } catch (err) {
-                    window.open(offer.link, '_blank');
-                }
-            });
+    event.preventDefault();
+    if (typeof ym === 'function') ym(112928603, 'reachGoal', 'hot_offer_click', { offer: offer.name });
+    try {
+        const url = new URL(offer.link);
+
+        // Разные партнёрские сети называют свои sub-параметры по-разному
+        const subMapByNetwork = {
+            fcn:   ['region_name:sub1', 'ad_id:sub2', 'keyword:sub3', 'client_id:sub4', 'yclid:sub5', 'campaign_id:sub6'],
+            leads: ['region_name:aff_sub1', 'ad_id:aff_sub2', 'keyword:aff_sub3', 'client_id:aff_sub4', 'yclid:aff_sub5']
+        };
+
+        const pairs = subMapByNetwork[offer.network] || subMapByNetwork.fcn;
+
+        pairs.forEach(pair => {
+            const [key, sub] = pair.split(':');
+            const val = localStorage.getItem(key);
+            if (val) url.searchParams.set(sub, val);
+        });
+
+        window.open(url.toString(), '_blank');
+    } catch (err) {
+        window.open(offer.link, '_blank');
+    }
+});
 
             content.appendChild(title);
             content.appendChild(sub);
@@ -2483,56 +2437,6 @@
         }
     })();
     </script>
-    <script>
-(function() {
-    const burger = document.getElementById('siteBurger');
-    const nav = document.getElementById('siteNav');
-    if (!burger || !nav) return;
-
-    function closeMenu() {
-        nav.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-
-    function openMenu() {
-        nav.classList.add('open');
-        burger.setAttribute('aria-expanded', 'true');
-        burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    }
-
-    burger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (nav.classList.contains('open')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-     // Закрываем меню при клике по ссылке
-    nav.querySelectorAll('.site-nav-link').forEach(function(link) {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Закрываем меню при клике вне его
-    document.addEventListener('click', function(e) {
-        if (nav.classList.contains('open') &&
-            !nav.contains(e.target) &&
-            !burger.contains(e.target)) {
-            closeMenu();
-        }
-    });
-
-    // Закрываем при клике по якорю (для #faqSection)
-    window.addEventListener('hashchange', closeMenu);
-
-    // Если ширина окна становится больше 640 — закрываем меню
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 640) closeMenu();
-    });
-})();
-</script>
 
 </body>
 </html>
