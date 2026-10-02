@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../wallet.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../wallet.png">
+    <link rel="apple-touch-icon" href="../wallet.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Дебетовые карты с кэшбэком и процентом на остаток | WalletPick</title>
+    <meta name="description" content="Скоро на WalletPick появятся дебетовые карты с кэшбэком, процентом на остаток и бесплатным обслуживанием. А пока — подборка микрозаймов под 0%.">
+    <link rel="canonical" href="https://m4corporation.github.io/wallet_pick/debit-cards/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WalletPick">
+    <meta property="og:title" content="Дебетовые карты с кэшбэком и процентом на остаток | WalletPick">
+    <meta property="og:description" content="Скоро на WalletPick появятся дебетовые карты с кэшбэком и процентом на остаток.">
+    <meta property="og:url" content="https://m4corporation.github.io/wallet_pick/debit-cards/">
+    <meta property="og:image" content="https://m4corporation.github.io/wallet_pick/og-image.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://m4corporation.github.io/wallet_pick/debit-cards/#webpage",
+          "url": "https://m4corporation.github.io/wallet_pick/debit-cards/",
+          "name": "Дебетовые карты с кэшбэком и процентом на остаток",
+          "description": "Скоро на WalletPick появятся дебетовые карты с кэшбэком, процентом на остаток и бесплатным обслуживанием.",
+          "inLanguage": "ru-RU",
+          "publisher": { "@id": "https://m4corporation.github.io/wallet_pick/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://m4corporation.github.io/wallet_pick/debit-cards/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://m4corporation.github.io/wallet_pick/" },
+            { "@type": "ListItem", "position": 2, "name": "Дебетовые карты" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #5b7cfa;
+            --primary-dark: #3d5ce0;
+            --primary-light: #7d9aff;
+            --primary-soft: #eef2ff;
+            --primary-text: #2c3e6b;
+            --accent: #00c2a8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafbfc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            width: 100%;
+            overflow-x: clip;
+            max-width: 100%;
+        }
+
+        .showcase {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 1.5rem;
+            flex: 1 0 auto;
+        }
+
+        /* ---------- ХЕДЕР ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            margin: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(16px);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+            border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+            transition: box-shadow 0.25s ease;
+        }
+        .site-header.scrolled { box-shadow: 0 6px 20px -12px rgba(13, 30, 58, 0.15); }
+        .site-header-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0.85rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            position: relative;
+        }
+        .site-logo {
+            display: inline-flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #0d1e3a; font-weight: 800; font-size: 1.15rem;
+            letter-spacing: -0.02em;
+            transition: opacity 0.2s;
+        }
+        .site-logo:hover { opacity: 0.85; }
+        .site-logo-mark {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: #fff; border-radius: 12px; font-size: 1rem; font-weight: 900;
+            box-shadow: 0 8px 18px -8px rgba(91,124,250,0.55);
+        }
+        .site-nav { display: flex; align-items: center; gap: 4px; }
+        .site-nav-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 0.5rem 0.9rem; font-size: 0.88rem; font-weight: 600;
+            color: #4b5e7a; text-decoration: none; border-radius: 40px;
+            transition: background 0.2s, color 0.2s; white-space: nowrap;
+        }
+        .site-nav-link:hover { background: #eef2ff; color: var(--primary-dark); }
+        .site-nav-link.active { background: var(--primary-soft); color: var(--primary-dark); }
+        .site-nav-tg {
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            color: #fff; box-shadow: 0 8px 18px -8px rgba(34, 158, 217, 0.5);
+        }
+        .site-nav-link.site-nav-tg:hover {
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            color: #fff;
+            filter: brightness(1.08);
+        }
+
+        /* Бургер */
+        .site-burger {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #0d1e3a;
+            width: 42px; height: 42px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+            z-index: 1001;
+            flex-shrink: 0;
+        }
+        .site-burger:hover { background: #eef2ff; color: var(--primary-dark); }
+        .site-burger:active { transform: scale(0.95); }
+        .site-burger i { display: block; line-height: 1; font-size: 1.4rem; }
+
+        /* ХЛЕБНЫЕ КРОШКИ */
+        .breadcrumbs {
+            max-width: 1200px;
+            margin: 1.2rem auto 1.5rem;
+            padding: 0 0.25rem;
+        }
+        .breadcrumbs ol {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+        }
+        .breadcrumbs li { display: inline-flex; align-items: center; gap: 8px; }
+        .breadcrumbs li + li::before {
+            content: '›'; color: #b8c6da; font-size: 1.05rem; line-height: 1;
+        }
+        .breadcrumbs a {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 0.4rem 0.85rem;
+            background: #ffffff; border: 1px solid rgba(180, 200, 225, 0.5);
+            border-radius: 40px; font-size: 0.82rem; font-weight: 600;
+            color: #4b5e7a; text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+            line-height: 1.2; white-space: nowrap;
+        }
+        .breadcrumbs a:hover {
+            background: #eef2ff; border-color: rgba(91,124,250, 0.5);
+            color: var(--primary-dark); transform: translateY(-1px);
+        }
+        .breadcrumbs a i { font-size: 0.75rem; color: #8a9bb5; transition: color 0.2s; }
+        .breadcrumbs a:hover i { color: var(--primary); }
+        .breadcrumbs [aria-current="page"] {
+            display: inline-flex; align-items: center;
+            padding: 0.4rem 0.85rem;
+            background: var(--primary-soft); border: 1px solid transparent;
+            border-radius: 40px; font-size: 0.82rem; font-weight: 600;
+            color: var(--primary-dark); line-height: 1.2; white-space: nowrap;
+        }
+
+        /* ЗАГОЛОВОК */
+        .page-header { text-align: center; margin-bottom: 2.5rem; padding: 0 0.5rem; }
+        .page-header h1 {
+            font-size: 3rem; font-weight: 800; color: #0d1e3a;
+            letter-spacing: -0.03em; margin-bottom: 0.8rem; line-height: 1.15;
+        }
+        .page-header h1 .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header p {
+            font-size: 1.15rem; color: #5c6f8c; max-width: 620px;
+            margin: 0 auto; line-height: 1.55;
+        }
+
+        /* БЛОК-ЗАГЛУШКА */
+        .coming-soon {
+            max-width: 720px;
+            margin: 2rem auto 3rem;
+            background: linear-gradient(135deg, #eef2ff 0%, #e7f5ff 55%, #e6fbf5 100%);
+            border: 2px solid rgba(91,124,250,0.2);
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -25px rgba(91,124,250,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% -20%, rgba(0,194,168,0.15) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .coming-soon-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 24px;
+            color: #fff; font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 30px -12px rgba(91,124,250,0.6);
+            position: relative;
+            z-index: 1;
+        }
+        .coming-soon h2 {
+            font-size: 1.8rem; font-weight: 800; color: #0d1e3a;
+            margin-bottom: 0.9rem; letter-spacing: -0.02em;
+            position: relative; z-index: 1;
+        }
+        .coming-soon p {
+            font-size: 1.05rem; color: #4b5e7a; line-height: 1.6;
+            max-width: 520px; margin: 0 auto 1.8rem;
+            position: relative; z-index: 1;
+        }
+        .coming-soon-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #fff; font-weight: 700; font-size: 1rem;
+            padding: 1rem 2rem; border-radius: 60px;
+            text-decoration: none;
+            box-shadow: 0 12px 26px -8px rgba(91,124,250,0.6);
+            transition: filter 0.2s, box-shadow 0.2s, transform 0.1s;
+            position: relative; z-index: 1;
+        }
+        .coming-soon-btn:hover {
+            filter: brightness(1.08);
+            box-shadow: 0 16px 32px -8px rgba(91,124,250,0.75);
+        }
+        .coming-soon-btn:active { transform: scale(0.98); }
+
+        .coming-soon-note {
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            background: #fff8e6;
+            border: 1px solid #ffe4a3;
+            color: #8a6a1a;
+            font-size: 0.9rem;
+            padding: 0.9rem 1.3rem;
+            border-radius: 40px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .coming-soon-note i { color: #e6a700; margin-right: 6px; }
+
+        /* TELEGRAM */
+        .tg-helper {
+            max-width: 780px;
+            margin: 2.5rem auto 0;
+            background: linear-gradient(135deg, #e7f5ff 0%, #eef2ff 100%);
+            border: 1px solid rgba(91,124,250,0.2);
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            box-shadow: 0 15px 30px -15px rgba(91,124,250,0.25);
+        }
+        .tg-helper-icon {
+            flex-shrink: 0; width: 60px; height: 60px;
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 20px -6px rgba(34, 158, 217, 0.5);
+        }
+        .tg-helper-icon i { color: #fff; font-size: 1.9rem; }
+        .tg-helper-content { flex: 1; }
+        .tg-helper-content h3 {
+            font-size: 1.15rem; font-weight: 700; color: #0d1e3a;
+            margin-bottom: 0.4rem; letter-spacing: -0.01em;
+        }
+        .tg-helper-content p {
+            font-size: 0.92rem; color: #4b5e7a; line-height: 1.5;
+            margin-bottom: 0.9rem;
+        }
+        .tg-helper-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            color: #fff; font-weight: 700; font-size: 0.95rem;
+            padding: 0.75rem 1.4rem; border-radius: 60px;
+            text-decoration: none;
+            box-shadow: 0 8px 18px -6px rgba(34, 158, 217, 0.55);
+            transition: filter 0.2s, transform 0.1s, box-shadow 0.2s;
+        }
+        .tg-helper-btn:hover {
+            filter: brightness(1.08);
+            box-shadow: 0 12px 24px -6px rgba(34, 158, 217, 0.7);
+        }
+        .tg-helper-btn:active { transform: scale(0.98); }
+
+        /* ФУТЕР */
+        .footer {
+            max-width: 1200px; width: 100%;
+            margin: 4rem auto 0;
+            padding: 2rem 1.5rem 2.5rem;
+            border-top: 1px solid rgba(180, 200, 225, 0.5);
+            background: #ffffff; border-radius: 32px 32px 0 0;
+            box-shadow: 0 -10px 30px -20px rgba(0, 20, 40, 0.1);
+            color: #5c6f8c; font-size: 0.8rem; line-height: 1.6;
+            display: flex; flex-direction: column; align-items: center; text-align: left;
+        }
+        .footer-content { max-width: 1000px; width: 100%; }
+        .footer p { margin-bottom: 1rem; }
+        .footer p:last-child { margin-bottom: 0; }
+        .footer .copyright {
+            margin-top: 1.5rem; padding-top: 1.2rem;
+            border-top: 1px dashed rgba(180, 200, 225, 0.6);
+            text-align: center; font-weight: 500; color: #3f5370; font-size: 0.82rem;
+        }
+        .footer .disclaimer {
+            background: #f8fbff; padding: 1rem 1.2rem; border-radius: 20px;
+            border-left: 4px solid #a9c4e8; margin-bottom: 1.2rem;
+        }
+
+        /* ---------- КРАСИВЫЕ ССЫЛКИ В ФУТЕРЕ ---------- */
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 1.4rem 0 0.5rem;
+        }
+        .footer-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.55rem 1.1rem;
+            background: #f4f7fc;
+            border: 1px solid rgba(180, 200, 225, 0.5);
+            border-radius: 60px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #4b5e7a;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+            line-height: 1.2;
+        }
+        .footer-nav-link i {
+            font-size: 0.8rem;
+            color: #8a9bb5;
+            transition: color 0.2s;
+        }
+        .footer-nav-link:hover {
+            background: #eef2ff;
+            border-color: rgba(91,124,250, 0.5);
+            color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        .footer-nav-link:hover i {
+            color: var(--primary);
+        }
+
+        /* ФОН */
+        .bg-blur {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(214, 246, 255, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 70%, rgba(216, 238, 255, 0.35) 0%, transparent 50%);
+            pointer-events: none; z-index: -1;
+        }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .coming-soon { padding: 2.2rem 1.6rem; }
+            .coming-soon h2 { font-size: 1.5rem; }
+        }
+
+        @media (max-width: 640px) {
+            .showcase { padding: 0 1rem; }
+
+            .site-header-inner { padding: 0.7rem 1rem; }
+            .site-logo-text { font-size: 1rem; }
+            .site-logo-mark { width: 32px; height: 32px; font-size: 0.9rem; }
+
+            /* Бургер */
+            .site-burger { display: inline-flex; }
+
+            .site-nav {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                background: #ffffff;
+                border-bottom: 1px solid rgba(210, 225, 240, 0.6);
+                box-shadow: 0 20px 40px -20px rgba(13, 30, 58, 0.2);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 2px;
+                padding: 0.6rem 0.9rem 1rem;
+                z-index: 999;
+                animation: slideDown 0.2s ease;
+            }
+            .site-nav.open { display: flex; }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .site-nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.92rem;
+                border-radius: 12px;
+                justify-content: flex-start;
+                width: 100%;
+                gap: 10px;
+            }
+            .site-nav-link i {
+                font-size: 0.9rem; color: #8a9bb5;
+                width: 18px; text-align: center; flex-shrink: 0;
+            }
+            .site-nav-link:hover i,
+            .site-nav-link.active i { color: var(--primary-dark); }
+            .site-nav-link.site-nav-tg i { color: #fff; }
+
+            .breadcrumbs { font-size: 0.74rem; margin: 1rem auto 1rem; padding: 0; }
+            .breadcrumbs a,
+            .breadcrumbs [aria-current="page"] {
+                padding: 0.35rem 0.7rem; font-size: 0.75rem;
+            }
+            .breadcrumbs li + li::before { font-size: 0.9rem; }
+
+            .page-header h1 { font-size: 1.8rem; }
+            .page-header p { font-size: 0.98rem; }
+
+            .coming-soon {
+                padding: 2rem 1.3rem;
+                border-radius: 24px;
+                margin: 1.5rem auto 2rem;
+            }
+            .coming-soon-icon {
+                width: 64px; height: 64px;
+                font-size: 1.8rem;
+                border-radius: 18px;
+                margin-bottom: 1.2rem;
+            }
+            .coming-soon h2 { font-size: 1.3rem; }
+            .coming-soon p { font-size: 0.95rem; }
+            .coming-soon-btn {
+                width: 100%;
+                font-size: 0.95rem;
+                padding: 0.9rem 1.5rem;
+            }
+
+            .tg-helper {
+                flex-direction: column; text-align: center;
+                padding: 1.4rem 1.2rem; gap: 1rem;
+            }
+            .tg-helper-icon { width: 54px; height: 54px; }
+            .tg-helper-icon i { font-size: 1.6rem; }
+            .tg-helper-content h3 { font-size: 1.05rem; }
+            .tg-helper-content p { font-size: 0.86rem; }
+            .tg-helper-btn { font-size: 0.9rem; padding: 0.7rem 1.2rem; }
+
+            .footer {
+                margin-top: 2.5rem;
+                padding: 1.5rem 1rem 2rem;
+                font-size: 0.75rem;
+                border-radius: 24px 24px 0 0;
+            }
+
+            .footer-nav {
+                gap: 0.5rem;
+                margin: 1.2rem 0 0.3rem;
+            }
+            .footer-nav-link {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.78rem;
+            }
+            .footer-nav-link i { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-blur"></div>
+
+    <!-- ХЕДЕР -->
+    <header class="site-header" id="siteHeader">
+        <div class="site-header-inner">
+            <a href="https://m4corporation.github.io/wallet_pick/" class="site-logo">
+                <span class="site-logo-mark">W</span>
+                <span class="site-logo-text">WalletPick</span>
+            </a>
+
+            <button class="site-burger" id="siteBurger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="siteNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+                <a href="https://m4corporation.github.io/wallet_pick/" class="site-nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    Главная
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/credit-cards/" class="site-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Кредитные карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/debit-cards/" class="site-nav-link active">
+                    <i class="fa-solid fa-wallet"></i>
+                    Дебетовые карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/blog/" class="site-nav-link">
+                    <i class="fa-solid fa-book"></i>
+                    Блог
+                </a>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="site-nav-link site-nav-tg">
+                    <i class="fa-brands fa-telegram"></i>
+                    Telegram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="showcase">
+        <!-- ХЛЕБНЫЕ КРОШКИ -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <ol>
+                <li><a href="https://m4corporation.github.io/wallet_pick/"><i class="fa-solid fa-house"></i> Главная</a></li>
+                <li aria-current="page">Дебетовые карты</li>
+            </ol>
+        </nav>
+
+        <!-- ЗАГОЛОВОК -->
+        <div class="page-header">
+            <h1>Дебетовые <span class="highlight">карты</span></h1>
+            <p>Подборка дебетовых карт с кэшбэком, процентом на остаток и бесплатным обслуживанием от проверенных банков.</p>
+        </div>
+
+        <!-- БЛОК-ЗАГЛУШКА -->
+        <div class="coming-soon">
+            <div class="coming-soon-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <h2>Скоро здесь появятся дебетовые карты</h2>
+            <p>Мы собираем лучшие предложения по кэшбэку, проценту на остаток и условиям обслуживания. Раздел появится совсем скоро.</p>
+            <a href="https://m4corporation.github.io/wallet_pick/" class="coming-soon-btn">
+                <i class="fa-solid fa-fire"></i>
+                Посмотреть микрозаймы под 0%
+            </a>
+        </div>
+
+        <div class="coming-soon-note">
+            <i class="fa-solid fa-lightbulb"></i>
+            Пока раздел в разработке — загляните в <a href="https://m4corporation.github.io/wallet_pick/" style="color: var(--primary-dark); font-weight: 600; text-decoration: none;">подборку микрозаймов</a> или <a href="https://m4corporation.github.io/wallet_pick/blog/" style="color: var(--primary-dark); font-weight: 600; text-decoration: none;">статьи в блоге</a>.
+        </div>
+
+        <!-- TELEGRAM-ПОМОЩНИК -->
+        <div class="tg-helper">
+            <div class="tg-helper-icon">
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            <div class="tg-helper-content">
+                <h3>Нужна помощь с выбором?</h3>
+                <p>Напишите нашему менеджеру в Telegram — подскажем по дебетовым и кредитным картам, поможем подобрать под вашу ситуацию.</p>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="tg-helper-btn">
+                    <i class="fa-brands fa-telegram"></i> Написать в Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="disclaimer">
+                <p>Информация на сайте носит справочный характер и не является публичной офертой. Условия по банковским картам и займам уточняйте на сайтах банков и МФО.</p>
+                <p>Сервис WalletPick бесплатно предоставляет информацию о финансовых продуктах и не осуществляет банковскую или микрофинансовую деятельность.</p>
+            </div>
+
+            <!-- Красивые ссылки в футере -->
+            <nav class="footer-nav" aria-label="Навигация в футере">
+                <a href="https://m4corporation.github.io/wallet_pick/" class="footer-nav-link">
+                    <i class="fa-solid fa-house"></i> Главная
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/credit-cards/" class="footer-nav-link">
+                    <i class="fa-solid fa-credit-card"></i> Кредитные карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/debit-cards/" class="footer-nav-link">
+                    <i class="fa-solid fa-wallet"></i> Дебетовые карты
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/blog/" class="footer-nav-link">
+                    <i class="fa-solid fa-book"></i> Блог
+                </a>
+                <a href="https://m4corporation.github.io/wallet_pick/privacy.html" class="footer-nav-link">
+                    <i class="fa-solid fa-shield-halved"></i> Политика конфиденциальности
+                </a>
+                <a href="https://t.me/m4partner" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+            </nav>
+
+            <p class="copyright">© 2026 WalletPick. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- СКРИПТЫ -->
+    <script>
+    (function() {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+        function onScroll() {
+            if (window.scrollY > 20) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    })();
+
+    (function() {
+        const burger = document.getElementById('siteBurger');
+        const nav = document.getElementById('siteNav');
+        if (!burger || !nav) return;
+
+        function closeMenu() {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+        function openMenu() {
+            nav.classList.add('open');
+            burger.setAttribute('aria-expanded', 'true');
+            burger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
+
+        burger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (nav.classList.contains('open')) closeMenu();
+            else openMenu();
+        });
+
+        nav.querySelectorAll('.site-nav-link').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('open') &&
+                !nav.contains(e.target) &&
+                !burger.contains(e.target)) closeMenu();
+        });
+
+        window.addEventListener('hashchange', closeMenu);
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 640) closeMenu();
+        });
+    })();
+    </script>
+</body>
+</html>
